@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinícius Neves Costa - Desenvolvedor Full Stack</title>
+    <style>
+        :root {
+            --primary-color: #2d3748;
+            --secondary-color: #4a5568;
+            --accent-color: #3182ce;
+            --bg-color: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--bg-color);
+            color: var(--primary-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            margin-bottom: 2rem;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            color: var(--accent-color);
+            font-size: 1.25rem;
+            margin: 1.5rem 0 0.75rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.25rem;
+        }
+        
+        .contact-info {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        ul {
+            list-style-type: none;
+            margin-left: 0;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.25rem;
+        }
+        
+        li::before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+        }
+        
+        .job-title {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .job-period {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+        
+        section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-category {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .skill-item {
+            background: #edf2f7;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>VINÍCIUS NEVES COSTA</h1>
+        <div class="contact-info">
+            <a href="mailto:vinicius.nevesco@gmail.com">vinicius.nevesco@gmail.com</a> |
+            <a href="https://github.com/viniciusnevescosta" target="_blank">GitHub</a> |
+            <a href="https://linkedin.com/in/nevesco" target="_blank">LinkedIn</a>
+        </div>
+    </header>
+
+    <section>
+        <h2>RESUMO PROFISSIONAL</h2>
+        <p>Desenvolvedor Full Stack com experiência em desenvolvimento de aplicações web e automação ETL. Possuo sólidos conhecimentos em Node.js, React e MongoDB, com certificação AWS Cloud Practitioner. Busco oportunidades para contribuir com desenvolvimento de soluções tecnológicas inovadoras e escaláveis.</p>
+    </section>
+
+    <section>
+        <h2>EXPERIÊNCIA PROFISSIONAL</h2>
+        <div>
+            <div class="job-title">Analista de Infraestrutura Jr. | MTP Brasil</div>
+            <div class="job-period">Janeiro 2024 - Presente</div>
+            <ul>
+                <li>Implementação de ERP interno utilizando arquitetura de microsserviços (.NET) e front-end React na AWS, com CI/CD via Azure DevOps e Docker</li>
+                <li>Desenvolvimento de scripts Node.js para automação ETL, integrando APIs com MongoDB e visualização em Power BI</li>
+                <li>Administração do painel administrativo Microsoft 365, gerenciando usuários, políticas e recursos</li>
+                <li>Configuração e manutenção de pipelines de deploy automatizado entre Azure DevOps e AWS</li>
+            </ul>
+        </div>
+        <div>
+            <div class="job-title">Auxiliar de TI | MTP Brasil</div>
+            <div class="job-period">Março 2023 - Janeiro 2024</div>
+            <ul>
+                <li>Suporte técnico e manutenção de infraestrutura</li>
+                <li>Colaboração em projetos de implementação de serviços em nuvem</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>FORMAÇÃO ACADÊMICA</h2>
+        <ul>
+            <li>
+                <strong>Análise e Desenvolvimento de Sistemas</strong> - Universidade Cruzeiro do Sul (Cursando)
+            </li>
+            <li>
+                <strong>Técnico em Análise e Desenvolvimento de Sistemas</strong> - ETEC (2020-2022)
+                <br>
+                <span class="job-period">TCC: Desenvolvimento de sistema full stack multiplataforma para controle de estoque (Equilíbrio Natural)</span>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>HABILIDADES TÉCNICAS</h2>
+        <div class="skill-category">
+            <span class="skill-item">TypeScript</span>
+            <span class="skill-item">React</span>
+            <span class="skill-item">Vue</span>
+            <span class="skill-item">Ionic</span>
+            <span class="skill-item">Electron</span>
+            <span class="skill-item">Node.js</span>
+            <span class="skill-item">Express</span>
+            <span class="skill-item">MongoDB</span>
+            <span class="skill-item">Firebase</span>
+            <span class="skill-item">Docker</span>
+            <span class="skill-item">Power BI</span>
+            <span class="skill-item">AWS</span>
+            <span class="skill-item">Azure</span>
+            <span class="skill-item">GCP</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>CERTIFICAÇÕES</h2>
+        <ul>
+            <li>AWS Certified Cloud Practitioner (2023)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>CONQUISTAS</h2>
+        <ul>
+            <li>2º lugar no Startup in School (Google) - Desenvolvimento do Criptphy, um gerenciador de senhas seguro</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>IDIOMAS</h2>
+        <ul>
+            <li>Português (Nativo)</li>
+            <li>Inglês (Intermediário) - Leitura, escrita e conversação</li>
+        </ul>
+    </section>
+</body>
+</html>
