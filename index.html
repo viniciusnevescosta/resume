@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinícius Neves Costa - Desenvolvedor Full Stack</title>
+    <title>Vinícius Neves Costa - Resume</title>
 
-    <meta name="description" content="Currículo de Vinícius Neves Costa, Desenvolvedor Full Stack e Analista de Infraestrutura com experiência em Node.js, React, MongoDB e DevOps na AWS.">
-    <meta name="keywords" content="Desenvolvedor Full Stack, Node.js, React, MongoDB, AWS, CI/CD, Infraestrutura de TI">
+    <meta name="description" content="Desenvolvedor Full Stack AWS Certified com experiência em arquiteturas cloud, automação ETL e desenvolvimento de sistemas escaláveis com Node.js e React">
+    <meta name="keywords" content="AWS Certified, Node.js Developer, React Specialist, Cloud Architecture, ETL Automation, DevOps">
     <meta name="author" content="Vinícius Neves Costa">
-    <meta property="og:title" content="Vinícius Neves Costa - Desenvolvedor Full Stack">
-    <meta property="og:description" content="Currículo de Vinícius Neves Costa, Desenvolvedor Full Stack e Analista de Infraestrutura com experiência em Node.js, React, MongoDB e DevOps na AWS.">
+    <meta property="og:title" content="Vinícius Neves Costa - Desenvolvedor Full Stack AWS Certified">
+    <meta property="og:description" content="Especialista em desenvolvimento de aplicações cloud-native e automação de processos com certificação AWS">
     <meta property="og:url" content="https://viniciusnevescosta.github.io/">
 
-    <link rel="icon" href="media/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 
     <style>
         :root {
-            --primary-color: #2d3748;
-            --secondary-color: #4a5568;
-            --accent-color: #3182ce;
-            --bg-color: #FFFFFF;
+            --primary-color: rgb(16, 15, 15);
+            --secondary-color: rgb(52, 51, 49);
+            --accent-color: rgb(52, 51, 49);
+            --bg-color: rgb(242, 240, 229);
         }
 
         * {
@@ -40,49 +40,58 @@
 
         header {
             margin-bottom: 2rem;
+            text-align: center;
         }
 
         h1 {
             color: var(--primary-color);
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
+            font-size: 2.25rem;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.5px;
         }
 
         h2 {
             color: var(--accent-color);
-            font-size: 1.25rem;
-            margin: 1.5rem 0 0.75rem;
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.25rem;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 0.5rem;
         }
 
         .contact-info {
             color: var(--secondary-color);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
         }
 
         .contact-info a {
             color: var(--accent-color);
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: opacity 0.3s;
         }
 
         .contact-info a:hover {
-            text-decoration: underline;
+            opacity: 0.8;
         }
 
         ul {
             list-style-type: none;
-            margin-left: 0;
         }
 
         li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
             position: relative;
-            padding-left: 1.25rem;
         }
 
         li::before {
-            content: "•";
+            content: "▹";
             color: var(--accent-color);
             position: absolute;
             left: 0;
@@ -91,29 +100,53 @@
         .job-title {
             font-weight: 600;
             color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
         }
 
         .job-period {
             color: var(--secondary-color);
             font-size: 0.9rem;
-        }
-
-        section {
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
         }
 
         .skill-category {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .skill-group {
+            background: rgb(230, 228, 217);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .skill-group strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
         }
 
         .skill-item {
-            background: #edf2f7;
+            display: inline-block;
+            background: var(--bg-color);
             padding: 0.25rem 0.75rem;
+            margin: 0.25rem;
             border-radius: 1rem;
             font-size: 0.9rem;
+            border: 1px solid rgb(218, 216, 206);
+        }
+
+        .project-link {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: var(--accent-color)
         }
     </style>
 
@@ -122,98 +155,127 @@
 <body>
     <header>
         <h1>VINÍCIUS NEVES COSTA</h1>
-        <div class="contact-info">
-            <a href="mailto:vinicius.nevesco@gmail.com"><i class="ri-mail-line"></i>vinicius.nevesco@gmail.com</a> |
-            <a href="https://github.com/viniciusnevescosta" target="_blank"><i class="ri-github-line"></i>GitHub</a> |
-            <a href="https://viniciusnevescosta.medium.com/" target="_blank"><i class="ri-medium-fill"></i>Medium</a> |
-            <a href="https://linkedin.com/in/nevesco" target="_blank"><i class="ri-linkedin-box-fill"></i>LinkedIn</a>
-        </div>
+        <nav class="contact-info" aria-label="Contatos principais">
+            <!-- <a href="https://github.com/viniciusnevescosta" target="_blank" aria-label="Perfil no GitHub">
+                <i class="ri-pages-line"></i>Site
+            </a>
+            <a href="https://github.com/viniciusnevescosta" target="_blank" aria-label="Perfil no GitHub">
+                <i class="ri-news-line"></i>Blog
+            </a> -->
+            <a href="https://github.com/viniciusnevescosta" target="_blank" aria-label="Perfil no GitHub">
+                <i class="ri-github-line"></i>GitHub
+            </a>
+            <a href="https://linkedin.com/in/nevesco" target="_blank" aria-label="Perfil no LinkedIn">
+                <i class="ri-linkedin-box-fill"></i>LinkedIn
+            </a>
+            <a href="mailto:vinicius.nevesco@gmail.com" aria-label="Enviar email">
+                <i class="ri-mail-line"></i>E-mail
+            </a>
+        </nav>
     </header>
-
     <section>
         <h2>RESUMO PROFISSIONAL</h2>
-        <p>Desenvolvedor Full Stack com experiência em desenvolvimento de aplicações web e automação ETL. Possuo sólidos conhecimentos em Node.js, React e MongoDB, com certificação AWS Cloud Practitioner. Busco oportunidades para contribuir com desenvolvimento de soluções tecnológicas inovadoras e escaláveis.</p>
+        Desenvolvedor na área de Inovações em Tecnologia da MTP Brasil. Trabalho com React (Material UI), C# (DDD, Clean Architecture) e MySQL, desenvolvendo soluções escaláveis e bem estruturadas. Além da experiência prática, aprofundo meus conhecimentos em AWS, microserviços e arquitetura limpa. Atualmente, contribuo para o desenvolvimento de um RPA com IA para otimizar processos internos.
     </section>
-
     <section>
         <h2>EXPERIÊNCIA PROFISSIONAL</h2>
         <div>
-            <div class="job-title">Analista de Infraestrutura | MTP Brasil</div>
-            <div class="job-period">Janeiro 2024 - Presente</div>
+            <div class="job-title">Desenvolvedor Full Stack Jr. | MTP Brasil</div>
+            <div class="job-period">Janeiro 2025 - Presente</div>
             <ul>
-                <li>Implementação de ERP interno utilizando arquitetura de microsserviços (.NET) e front-end React na AWS, com CI/CD via Azure DevOps e Docker</li>
-                <li>Desenvolvimento de scripts Node.js para automação ETL, integrando APIs com MongoDB e visualização em Power BI</li>
-                <li>Configuração e manutenção de pipelines de deploy automatizado entre Azure DevOps e AWS</li>
+                <li>Desenvolvimento de soluções escaláveis com React (Material UI), C# (DDD, Clean Architecture) e MySQL.</li>
+                <li>Implementação de sistemas internos com foco em otimização de processos.</li>
+            </ul>
+        </div>
+        <div>
+            <div class="job-title">Analista de Infraestrutura Jr. | MTP Brasil</div>
+            <div class="job-period">Janeiro 2024 - Dezembro 2024</div>
+            <ul>
+                <li>Gestão de pipelines de CI/CD no Azure DevOps, automatizando deploys para AWS via Docker.</li>
+                <li>Automação de processo ETL com Node.js, APIs, MongoDB e integração de dados ao Power BI.</li>
             </ul>
         </div>
         <div>
             <div class="job-title">Auxiliar de TI | MTP Brasil</div>
-            <div class="job-period">Março 2023 - Janeiro 2024</div>
+            <div class="job-period">Março 2023 - Dezembro 2023</div>
             <ul>
-                <li>Suporte técnico e manutenção de infraestrutura</li>
-                <li>Colaboração em projetos de implementação de serviços em nuvem</li>
-                <li>Administração do painel administrativo Microsoft 365, gerenciando usuários, políticas e recursos</li>
+                <li>Suporte técnico e manutenção de infraestrutura de TI.</li>
+                <li>Gestão e organização de ativos em inventário.</li>
+                <li>Administração do Microsoft 365, incluindo gestão de usuários e políticas de segurança.</li>
             </ul>
         </div>
     </section>
-
     <section>
-        <h2>FORMAÇÃO ACADÊMICA</h2>
-        <ul>
-            <li>
-                <strong>Análise e Desenvolvimento de Sistemas</strong> - Universidade Cruzeiro do Sul (Cursando)
-            </li>
-            <li>
-                <strong>Técnico em Análise e Desenvolvimento de Sistemas</strong> - ETEC (2020-2022)
-                <br>
-                <span class="job-period"><a href="https://github.com/FrogDevs/etec-final-course-project" target="_blank">TCC: Desenvolvimento de sistema full stack multiplataforma para controle de estoque (Equilíbrio Natural)</a></span>
-            </li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>HABILIDADES TÉCNICAS</h2>
+        <h2>TECNOLOGIAS</h2>
         <div class="skill-category">
-            <span class="skill-item">TypeScript</span>
-            <span class="skill-item">React</span>
-            <span class="skill-item">Vue</span>
-            <span class="skill-item">Ionic</span>
-            <span class="skill-item">Electron</span>
-            <span class="skill-item">Node.js</span>
-            <span class="skill-item">Express</span>
-            <span class="skill-item">MongoDB</span>
-            <span class="skill-item">Firebase</span>
-            <span class="skill-item">Docker</span>
-            <span class="skill-item">Power BI</span>
-            <span class="skill-item">AWS</span>
-            <span class="skill-item">Azure</span>
-            <span class="skill-item">GCP</span>
+            <div class="skill-group">
+                <strong>Front-end</strong>
+                <span class="skill-item">React</span>
+                <span class="skill-item">Vue</span>
+                <span class="skill-item">MUI</span>
+                <span class="skill-item">Tailwind</span>
+                <span class="skill-item">TypeScript</span>
+            </div>
+
+            <div class="skill-group">
+                <strong>Back-end/Cloud</strong>
+                <span class="skill-item">C#</span>
+                <span class="skill-item">Golang</span>
+                <span class="skill-item">AWS</span>
+                <span class="skill-item">Docker</span>
+            </div>
+
+            <div class="skill-group">
+                <strong>Banco de Dados</strong>
+                <span class="skill-item">MySQL</span>
+                <span class="skill-item">PostgreSQL</span>
+                <span class="skill-item">MongoDB</span>
+                <span class="skill-item">Firebase</span>
+            </div>
         </div>
     </section>
-
-    <section>
-        <h2>CERTIFICAÇÕES</h2>
+    <!-- <section>
+        <h2>PROJETOS DESTACADOS</h2>
         <ul>
-            <li><a href="https://www.credly.com/badges/517fd129-d1e7-4851-a9f7-09a2abadbf01/linked_in?t=s0xbxa" target="_blank">AWS Certified Cloud Practitioner (2023)</a></li>
-
-            <!--  -->
+        </ul>
+    </section> -->
+    <section>
+        <h2>FORMAÇÃO & CERTIFICAÇÕES</h2>
+        <ul>
+            <!-- <li>
+                <strong>Engenharia da Computação</strong><br>
+                    Universidade Virtual do Estado de São Paulo - Univesp (2025 - Cursando)
+            </li> -->
+            <li>
+                <strong>Análise e Desenvolvimento de Sistemas</strong><br>
+                   Escola Técnica Estadual - Etec
+            </li>
+            <li>
+                <strong>AWS Certified Cloud Practitioner</strong><br>
+                <a href="https://www.credly.com/badges/517fd129-d1e7-4851-a9f7-09a2abadbf01" target="_blank">
+                    Credencial verificável
+                </a>
+            </li>
         </ul>
     </section>
-
-    <section>
-        <h2>CONQUISTAS</h2>
-        <ul>
-            <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:6950625561165598720/" target="_blank">2º lugar no Startup in School (Google) - Desenvolvimento do Criptphy, um gerenciador de senhas seguro</a></li>
-        </ul>
-    </section>
-
     <section>
         <h2>IDIOMAS</h2>
-        <ul>
-            <li>Português (Nativo)</li>
-            <li>Inglês (Intermediário) - Leitura, escrita e conversação</li>
-        </ul>
+        <div class="language-proficiency">
+            <div class="proficiency-item">
+                <strong>Português</strong><br>
+                Nativo
+            </div>
+            <br>
+            <div class="proficiency-item">
+                <strong>Inglês</strong><br>
+                Avançado<br>
+            </div>
+            <br>
+            <div class="proficiency-item">
+                <strong>Espanhol</strong><br>
+                Básico<br>
+            </div>
+        </div>
     </section>
-</body>
 </body>
 </html>
