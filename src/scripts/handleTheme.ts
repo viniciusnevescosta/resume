@@ -26,19 +26,27 @@ const applyTheme = (): void => {
 }
 
 const toggleButton = (): void => {
-	const BUTTON = document.querySelector('#theme') as HTMLElement | null
-	if (BUTTON) {
+	const BUTTON_NODE = document.querySelectorAll(
+		'#theme',
+	) as NodeListOf<HTMLElement> | null
+	if (!BUTTON_NODE) return
+
+	for (const BUTTON of BUTTON_NODE) {
 		BUTTON.addEventListener('click', toggleStorageTheme)
 	}
 }
 
 const switchButtonIcon = (): void => {
-	const BUTTON = document.querySelector('#theme')
-	if (!BUTTON) return
+	const BUTTON_NODE = document.querySelectorAll(
+		'#theme',
+	) as NodeListOf<HTMLElement> | null
+	if (!BUTTON_NODE) return
 
 	const CURRENT_THEME = getStorageTheme()
-	BUTTON.classList.toggle('ri-moon-line', CURRENT_THEME === 'light')
-	BUTTON.classList.toggle('ri-sun-line', CURRENT_THEME === 'dark')
+	for (const BUTTON of BUTTON_NODE) {
+		BUTTON.classList.toggle('ri-moon-line', CURRENT_THEME === 'light')
+		BUTTON.classList.toggle('ri-sun-line', CURRENT_THEME === 'dark')
+	}
 }
 
 const watchSystemTheme = (): void => {
