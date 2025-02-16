@@ -6,6 +6,7 @@
 	--skill-border: rgb(230, 228, 217);
 	--icon-hover-bg: rgb(242, 240, 229);
 	--icon-active-bg: rgb(230, 228, 217);
+	--bg-select: rgb(221, 241, 228);
 }
 
 [data-theme='dark'] {
@@ -16,6 +17,7 @@
 	--skill-border: rgb(40, 39, 38);
 	--icon-hover-bg: rgb(28, 27, 26);
 	--icon-active-bg: rgb(40, 39, 38);
+	--bg-select: rgb(18, 47, 44);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,6 +29,7 @@
 		--skill-border: rgb(40, 39, 38);
 		--icon-hover-bg: rgb(28, 27, 26);
 		--icon-active-bg: rgb(40, 39, 38);
+		--bg-select: rgb(18, 47, 44);
 	}
 }
 
@@ -35,6 +38,10 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+*::selection {
+  background-color: var(--bg-select);
 }
 
 body {
@@ -179,12 +186,12 @@ a {
 			display: flex;
 			flex-direction: column;
 			padding: 0.5rem;
-			margin-bottom: 12rem;
+			margin-bottom: 10rem;
 			margin-right: 2rem;
-			border: 2.5px;
+			border: 3px;
 			border-style: solid;
 			border-color: var(--text-color);
-			border-radius: 0.2rem;
+			border-radius: 8px;
 			opacity: 35%;
 			transition: opacity 0.2s ease-in-out;
 		}
@@ -203,10 +210,10 @@ a {
 .icon:hover {
 	cursor: pointer;
 	background-color: var(--icon-hover-bg);
-	border-radius: 0.2rem;
+	border-radius: 8px;
 }
 
 .icon:active {
 	background-color: var(--icon-active-bg);
-	border-radius: 0.2rem;
+	border-radius: 8px;
 }
