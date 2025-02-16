@@ -246,6 +246,10 @@ a {
 }
 
 @media (width <= 64rem) {
+	section {
+		text-align: start;
+	}
+
 	.container-aside {
 		visibility: hidden;
 	}
