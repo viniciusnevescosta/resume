@@ -3,8 +3,9 @@
 	"scripts": {
 		"dev": "vite",
 		"check": "biome check --unsafe --write .",
+		"preview": "vite preview",
 		"build": "tsc && vite build",
-		"preview": "vite preview"
+		"deploy-page": "python3 ./deploy.py"
 	},
 	"devDependencies": {
 		"typescript": "~5.7.2",
