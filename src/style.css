@@ -232,7 +232,8 @@ a {
 	width: 100%;
 	border-top: 0.0625rem solid;
 	border-color: var(--text-color);
-	border-radius: 0.5rem;
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
 	background: var(--bg-bottom-bar);
 	backdrop-filter: blur(0.625rem) brightness(0.9);
 
