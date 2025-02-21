@@ -246,6 +246,10 @@ a {
 }
 
 @media (width <= 64rem) {
+    body {
+        margin-bottom: 4rem;
+    }
+    
 	section {
 		text-align: start;
 	}
