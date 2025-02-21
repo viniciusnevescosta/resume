@@ -1,0 +1,3 @@
+- readme
+- corrigir script para apagar o /dist da main
+- correcões no handleTheme.ts
