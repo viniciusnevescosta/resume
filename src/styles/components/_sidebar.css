@@ -1,0 +1,52 @@
+.container-aside {
+	visibility: visible;
+	display: flex;
+	justify-content: end;
+	position: fixed;
+	height: 100%;
+	right: 0;
+	top: 0;
+}
+
+.container-aside aside {
+	display: flex;
+	align-items: end;
+	padding: 0.3rem;
+}
+
+.container-aside div {
+	display: flex;
+	flex-direction: column;
+	padding: 0.5rem;
+	margin-bottom: 10rem;
+	margin-right: 2rem;
+	border: 0.1875rem solid var(--text-color);
+	border-radius: 0.5rem;
+	opacity: 35%;
+	transition: opacity 0.2s ease-in-out;
+}
+
+.container-aside div:hover {
+	opacity: 100%;
+}
+
+.icon {
+	padding: 0 0.5rem;
+	transition: background-color 0.2s ease-in-out;
+}
+
+.icon:hover {
+	cursor: pointer;
+	background-color: var(--icon-hover-bg);
+	border-radius: 0.5rem;
+}
+
+.icon:active {
+	background-color: var(--icon-active-bg);
+}
+
+@media (width <= 64rem) {
+	.container-aside {
+		visibility: hidden;
+	}
+}

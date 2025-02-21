@@ -1,0 +1,37 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+*::selection {
+	background-color: var(--bg-select);
+}
+
+body {
+	max-width: 50rem;
+	margin: 0 auto;
+	padding: 2rem;
+	background: var(--bg-color);
+	color: var(--text-color);
+	line-height: 1.6;
+}
+
+section {
+	text-align: justify;
+}
+
+a {
+	color: var(--text-color);
+}
+
+@media (width <= 64rem) {
+	body {
+		margin-bottom: 4rem;
+	}
+
+	section {
+		text-align: start;
+	}
+}
