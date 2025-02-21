@@ -5,7 +5,7 @@
 		"check": "biome check --unsafe --write .",
 		"preview": "vite preview",
 		"build": "tsc && vite build",
-		"deploy-page": "python3 ./deploy.py"
+    "deploy": "rm -rf dist && python3 deploy.py"
 	},
 	"devDependencies": {
 		"typescript": "~5.7.2",
