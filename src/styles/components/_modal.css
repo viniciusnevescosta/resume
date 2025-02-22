@@ -33,21 +33,60 @@
 	padding: 2rem;
 	min-width: min(95%, 40rem);
 	min-height: min(80%, 25rem);
+	max-height: 25rem;
 	z-index: 1001;
 	pointer-events: auto;
-	overflow-y: auto;
 	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
+.popup-title {
+    width: 100%;
+}
+
 .popup-options {
-    display: flex;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.popup-options form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.popup-options label {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 0.2rem;
+  border: 1px solid var(--skill-border);
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.popup-options input {
+  display: none;
+}
+
+.popup-options input:checked + label {
+  background-color: var(--bg2-color);
+  color: var(--text-color);
 }
 
 .popup-exit {
 	color: var(--text2-color);
 	font-size: 0.9rem;
 	text-align: left;
+	user-select: none;
+	width: fit-content;
+	transition: opacity 0.2s ease;
+}
+
+.popup-exit:hover {
+    cursor: pointer;
+    opacity: 0.8;
 }
 
 .popup-exit kbd {
@@ -56,3 +95,22 @@
 	border-radius: 0.25rem;
 	border: 1px solid var(--skill-border);
 }
+
+#close_modal {
+    display: none;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+}
+
+@media (width <= 64rem) {
+    .popup-exit {
+        display: none;
+    }
+    
+    #close_modal {
+        display: block;
+    }
+}
+
