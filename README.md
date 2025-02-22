@@ -83,6 +83,14 @@ The deployment script will:
 1. Enable GitHub Pages for gh-pages branch:
 2. Settings → Pages → Build and deployment → Branch: gh-pages
 
+## Attributions
+
+🎨 Flexoki Color Scheme
+Base theme colors adapted from [Flexoki](https://github.com/kepano/flexoki) by [Steph Ango](https://stephango.com/) (MIT License)
+
+✨ Remix Icons
+Interface icons provided by [Remix Icon](https://remixicon.com/) (Apache-2.0 license)
+
 ## License
 
 Distributed under MIT License.
