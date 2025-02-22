@@ -23,36 +23,99 @@ DINO_EMOJI = "🦖"
 def fancy_print(emoji, color, message):
     print(f"{emoji} {BOLD}{color}{message}{END}")
 
-def run_cmd(command, shell_needed=False):
+def run_cmd(command, shell_needed=False, check=True):
     try:
-        subprocess.run(command, shell=shell_needed, check=True)
-        return True
+        result = subprocess.run(
+            command, 
+            shell=shell_needed, 
+            check=check,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True
+        )
+        return True, result.stdout
     except subprocess.CalledProcessError as e:
-        fancy_print("💥", RED, f"Critical fail! {e}") 
+        return False, e.stderr
+
+def gh_pages_exists():
+    # Check local branches
+    local_check = subprocess.run(
+        ["git", "show-ref", "--verify", "refs/heads/gh-pages"],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL
+    )
+    if local_check.returncode == 0:
+        return True
+
+    # Check remote branches
+    remote_check = subprocess.run(
+        ["git", "ls-remote", "--heads", "origin", "gh-pages"],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.DEVNULL
+    )
+    return remote_check.returncode == 0 and bool(remote_check.stdout.strip())
+
+def deploy_to_gh_pages():
+    # Get current branch name
+    success, current_branch = run_cmd(["git", "rev-parse", "--abbrev-ref", "HEAD"])
+    if not success:
+        fancy_print("💥", RED, "Failed to detect current branch!")
         return False
 
+    # Switch to gh-pages
+    fancy_print(ALIEN_EMOJI, CYAN, "Switching to gh-pages dimension...")
+    success, _ = run_cmd(["git", "checkout", "gh-pages"])
+    if not success:
+        fancy_print("👻", YELLOW, "Creating new gh-pages branch...")
+        if not run_cmd(["git", "checkout", "--orphan", "gh-pages"])[0]:
+            return False
+
+    # Clean existing files
+    fancy_print("🧹", CYAN, "Sanitizing deployment zone...")
+    run_cmd("git rm -rf . > /dev/null 2>&1 || true", shell_needed=True)
+
+    # Copy dist contents
+    fancy_print("📦", CYAN, "Beaming up dist contents...")
+    run_cmd(["cp", "-r", "dist/.", "."])
+
+    # Commit changes
+    fancy_print("💾", CYAN, "Finalizing quantum entanglement...")
+    success, _ = run_cmd(["git", "add", "-A"])
+    if success:
+        success, _ = run_cmd([
+            "git", 
+            "commit", 
+            "-m", 
+            "Deploy: Update from main branch " + 
+            subprocess.check_output(["git", "rev-parse", "--short", "HEAD"])
+            .decode().strip()
+        ])
+
+    # Push to remote
+    fancy_print(ROCKET_EMOJI, CYAN, "Initiating warp drive...")
+    success, _ = run_cmd(["git", "push", "origin", "gh-pages"])
+
+    # Return to original branch
+    run_cmd(["git", "checkout", current_branch.strip()])
+    return success
+
+# ----- Main Execution -----
 fancy_print(ROBOT_EMOJI, CYAN, "Initiating TURBO DEPLOY SEQUENCE...")
 fancy_print(DINO_EMOJI, YELLOW, "Compiling source codes (please don't turn into Skynet)...")
 
-if not run_cmd("pnpm build", shell_needed=True):
-    fancy_print(ALIEN_EMOJI, RED, "Build failed! Aborting before we create a black hole...")
+# Build project
+build_success, build_output = run_cmd("pnpm build", shell_needed=True)
+if not build_success:
+    fancy_print(ALIEN_EMOJI, RED, f"Build failed!\n{build_output}")
     exit(1)
 
-fancy_print(FIRE_EMOJI, GREEN, "Build complete! Now hacking the mainframe...")
-
-fancy_print(ALIEN_EMOJI, CYAN, "Forcing dist directory into version control (Resistance is futile!)")
-if not run_cmd(["git", "add", "dist", "-f"]):
+# Deploy to gh-pages
+fancy_print(FIRE_EMOJI, GREEN, "Build complete! Initiating deployment...")
+if not deploy_to_gh_pages():
+    fancy_print("🌌", RED, "Deployment failed! Check subspace frequencies.")
     exit(1)
 
-if not run_cmd(["git", "commit", "-m", "feat: Deploying to final frontier 🚀"]):
-    fancy_print("💾", YELLOW, "No changes to deploy. Everything up-to-date!")
-    exit(0)
-
-fancy_print(ROCKET_EMOJI, YELLOW, "Initiating warp drive to gh-pages quadrant...")
-if not run_cmd("git subtree push --prefix dist origin gh-pages", shell_needed=True):
-    fancy_print("🌌", RED, "Subspace communication failed! Check your warp bubble settings.")
-    exit(1)
-
+# Final success message
 fancy_print(PARTY_EMOJI, GREEN, "DEPLOYMENT SUCCESS! Your app is now cruising at warp 9.9!")
 fancy_print(ROCKET_EMOJI, CYAN, "Pro tip: Configure GitHub Pages to watch the gh-pages branch")
 fancy_print(ALIEN_EMOJI, YELLOW, "Live long and prosper! 🖖")
