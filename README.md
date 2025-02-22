@@ -1,4 +1,4 @@
-# Vinícius Neves Costa - Resume
+# Vinícius Costa - Resume
 
 [![Live Demo](https://img.shields.io/badge/%F0%9F%9A%80-Live%20Demo-2EA44F)](https://viniciusnevescosta.github.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -45,6 +45,27 @@ cd viniciusnevescosta.github.io
 pnpm dev
 ```
 
+### Language Management
+
+Edit JSON files in /src/locales/:
+
+```
+├─ en.json  # English
+├─ es.json  # Spanish
+└─ pt.json  # Portuguese
+```
+
+### Theme Customization
+
+Modify CSS variables in src/styles/base/_variables.css:
+```css
+:root {
+	--text-color: rgb(16, 15, 15);
+	--text2-color: rgb(111, 110, 105);
+  /* ... */
+}
+```
+
 3. Deploy:  
 ```bash
 pnpm github
@@ -61,3 +82,8 @@ The deployment script will:
 
 1. Enable GitHub Pages for gh-pages branch:
 2. Settings → Pages → Build and deployment → Branch: gh-pages
+
+## License
+
+Distributed under MIT License.
+See [LICENSE](LICENSE) file for full terms.
