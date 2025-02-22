@@ -3,5 +3,6 @@
 @import './styles/components/_header';
 @import './styles/sections/_main-content';
 @import './styles/components/_skills';
+@import './styles/components/_modal';
 @import './styles/components/_sidebar';
 @import './styles/components/_bottombar';
