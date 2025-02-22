@@ -1,5 +1,4 @@
 .container-aside {
-	visibility: visible;
 	display: flex;
 	justify-content: end;
 	position: fixed;
@@ -23,30 +22,15 @@
 	border: 0.1875rem solid var(--text-color);
 	border-radius: 0.5rem;
 	opacity: 35%;
-	transition: opacity 0.2s ease-in-out;
+	transition: opacity 0.2s ease;
 }
 
 .container-aside div:hover {
 	opacity: 100%;
 }
 
-.icon {
-	padding: 0 0.5rem;
-	transition: background-color 0.2s ease-in-out;
-}
-
-.icon:hover {
-	cursor: pointer;
-	background-color: var(--icon-hover-bg);
-	border-radius: 0.5rem;
-}
-
-.icon:active {
-	background-color: var(--icon-active-bg);
-}
-
 @media (width <= 64rem) {
 	.container-aside {
-		visibility: hidden;
+		display: none;
 	}
 }

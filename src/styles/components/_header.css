@@ -10,12 +10,17 @@ h1 {
 	letter-spacing: -0.03125rem;
 }
 
-h2 {
+h2, h3 {
 	color: var(--text-color);
 	font-size: 1.5rem;
 	margin: 2rem 0 1rem;
 	border-bottom: 0.1875rem solid var(--text-color);
 	padding-bottom: 0.5rem;
+}
+
+h3 {
+    margin: 0;
+    border-bottom: none;
 }
 
 .contact-info {

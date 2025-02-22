@@ -26,6 +26,21 @@ a {
 	color: var(--text-color);
 }
 
+.icon {
+	padding: 0 0.5rem;
+	transition: background-color 0.2s ease-in-out;
+}
+
+.icon:hover {
+	cursor: pointer;
+	background-color: var(--icon-hover-bg);
+	border-radius: 0.5rem;
+}
+
+.icon:active {
+	background-color: var(--icon-active-bg);
+}
+
 @media (width <= 64rem) {
 	body {
 		margin-bottom: 4rem;
