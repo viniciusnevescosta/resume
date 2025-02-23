@@ -38,7 +38,6 @@ def run_cmd(command, shell_needed=False, check=True):
         return False, e.stderr
 
 def gh_pages_exists():
-    # Check local branches
     local_check = subprocess.run(
         ["git", "show-ref", "--verify", "refs/heads/gh-pages"],
         stdout=subprocess.DEVNULL,
@@ -47,7 +46,6 @@ def gh_pages_exists():
     if local_check.returncode == 0:
         return True
 
-    # Check remote branches
     remote_check = subprocess.run(
         ["git", "ls-remote", "--heads", "origin", "gh-pages"],
         stdout=subprocess.PIPE,
@@ -56,13 +54,11 @@ def gh_pages_exists():
     return remote_check.returncode == 0 and bool(remote_check.stdout.strip())
 
 def deploy_to_gh_pages():
-    # Get current branch name
     success, current_branch = run_cmd(["git", "rev-parse", "--abbrev-ref", "HEAD"])
     if not success:
         fancy_print("💥", RED, "Failed to detect current branch!")
         return False
 
-    # Switch to gh-pages
     fancy_print(ALIEN_EMOJI, CYAN, "Switching to gh-pages dimension...")
     success, _ = run_cmd(["git", "checkout", "gh-pages"])
     if not success:
@@ -70,15 +66,12 @@ def deploy_to_gh_pages():
         if not run_cmd(["git", "checkout", "--orphan", "gh-pages"])[0]:
             return False
 
-    # Clean existing files
     fancy_print("🧹", CYAN, "Sanitizing deployment zone...")
     run_cmd("git rm -rf . > /dev/null 2>&1 || true", shell_needed=True)
 
-    # Copy dist contents
     fancy_print("📦", CYAN, "Beaming up dist contents...")
     run_cmd(["cp", "-r", "dist/.", "."])
 
-    # Commit changes
     fancy_print("💾", CYAN, "Finalizing quantum entanglement...")
     success, _ = run_cmd(["git", "add", "-A"])
     if success:
@@ -91,16 +84,28 @@ def deploy_to_gh_pages():
             .decode().strip()
         ])
 
-    # Push to remote
     fancy_print(ROCKET_EMOJI, CYAN, "Initiating warp drive...")
     success, _ = run_cmd(["git", "push", "origin", "gh-pages"])
 
-    # Return to original branch
     run_cmd(["git", "checkout", current_branch.strip()])
     return success
 
 # ----- Main Execution -----
 fancy_print(ROBOT_EMOJI, CYAN, "Initiating TURBO DEPLOY SEQUENCE...")
+
+# Verificação da branch main
+fancy_print(ROBOT_EMOJI, CYAN, "Verifying main branch alignment...")
+success, current_branch = run_cmd(["git", "rev-parse", "--abbrev-ref", "HEAD"])
+if not success:
+    fancy_print("💥", RED, "Failed to detect current branch!")
+    exit(1)
+
+current_branch = current_branch.strip()
+if current_branch != "main":
+    fancy_print("🚫", RED, f"Currently on branch '{current_branch}'. Please switch to main first!")
+    fancy_print("🔄", YELLOW, "Try: git checkout main")
+    exit(1)
+
 fancy_print(DINO_EMOJI, YELLOW, "Compiling source codes (please don't turn into Skynet)...")
 
 # Build project
