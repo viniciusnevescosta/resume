@@ -66,13 +66,14 @@ Modify CSS variables in src/styles/base/_variables.css:
 }
 ```
 
+### Deployment Setup
+
 3. Deploy:  
 ```bash
 git checkout main
 pnpm github
 ```
 
-### Deployment Setup
 The deployment script will:
 
 1. Generate production build in ./dist
