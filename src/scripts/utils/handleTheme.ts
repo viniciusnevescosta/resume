@@ -9,8 +9,8 @@ const setStorageThemeBySystemOne = (): void => {
 }
 
 const getStorageTheme = (): 'light' | 'dark' => {
-    const theme = localStorage.getItem('theme')
-    return theme === 'dark' || theme === 'light' ? theme : 'light'
+	const theme = localStorage.getItem('theme')
+	return theme === 'dark' || theme === 'light' ? theme : 'light'
 }
 
 const toggleStorageTheme = (): void => {
@@ -62,9 +62,9 @@ const watchSystemTheme = (): void => {
 }
 
 export const handleTheme = (): void => {
-    setStorageThemeBySystemOne()
-    applyTheme()
-    toggleButton()
-    switchButtonIcon()
-    watchSystemTheme()
+	setStorageThemeBySystemOne()
+	applyTheme()
+	toggleButton()
+	switchButtonIcon()
+	watchSystemTheme()
 }
