@@ -68,6 +68,7 @@ Modify CSS variables in src/styles/base/_variables.css:
 
 3. Deploy:  
 ```bash
+git checkout main
 pnpm github
 ```
 
