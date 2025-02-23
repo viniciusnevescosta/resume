@@ -1,3 +1,3 @@
-import { handleTheme } from './scripts/handleTheme'
+import { handleTheme } from './scripts/utils/handleTheme'
 
 handleTheme()
