@@ -5,7 +5,8 @@
 		"check": "biome check --unsafe --write .",
 		"preview": "vite preview",
 		"build": "tsc && vite build",
-    "github": "rm -rf dist && python3 deploy.py"
+		"predeploy": "pnpm check && git checkout main",
+		"github": "rm -rf dist && python3 deploy.py"
 	},
 	"dependencies": {
 		"remixicon": "^4.6.0"
