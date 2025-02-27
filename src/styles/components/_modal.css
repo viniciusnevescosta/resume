@@ -88,12 +88,6 @@
 	text-align: left;
 	user-select: none;
 	width: fit-content;
-	transition: opacity 0.2s ease;
-}
-
-.popup-exit:hover {
-	cursor: pointer;
-	opacity: 0.8;
 }
 
 .popup-exit kbd {
@@ -109,6 +103,7 @@
 	top: 1rem;
 	right: 1rem;
 	padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+	color: var(--text2-color);
 }
 
 @media (width <= 64rem) {
