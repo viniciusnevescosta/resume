@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { MainLayout } from './layout/MainLayout'
 import { OptionsMenu } from './shared/components/OptionsMenu'
 import { OptionsModal } from './shared/components/OptionsModal'
+import { BottomBar } from './shared/components/BottomBar'
 
 export const App = () => {
 	type ModalType = 'theme' | 'lang' | 'file'
@@ -49,6 +50,7 @@ export const App = () => {
 		<>
 			<MainLayout />
 			<OptionsMenu onClickModal={handleOpenModal} />
+			<BottomBar onClickModal={handleOpenModal} />
 
 			{activeModal.type && (
 				<OptionsModal
