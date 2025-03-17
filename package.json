@@ -9,8 +9,10 @@
 		"github": "rm -rf dist && python3 deploy.py"
 	},
 	"dependencies": {
+		"i18next": "^24.2.3",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0",
+		"react-i18next": "^15.4.1",
 		"remixicon": "^4.6.0"
 	},
 	"devDependencies": {
