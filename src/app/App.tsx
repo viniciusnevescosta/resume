@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { MainLayout } from './layout/MainLayout'
+import { BottomBar } from './shared/components/BottomBar'
 import { OptionsMenu } from './shared/components/OptionsMenu'
 import { OptionsModal } from './shared/components/OptionsModal'
-import { BottomBar } from './shared/components/BottomBar'
 
 export const App = () => {
 	type ModalType = 'theme' | 'lang' | 'file'
@@ -13,27 +13,28 @@ export const App = () => {
 
 	const modalConfigs = {
 		theme: {
-			title: 'Selecione o tema',
+			title: 'Selecionar tema',
 			options: [
-				{ id: 'system', value: 'Sistema' },
+				{ id: 'system-theme', value: 'Sistema', checked: true },
 				{ id: 'light', value: 'Claro' },
 				{ id: 'dark', value: 'Escuro' },
 			],
 		},
 		lang: {
-			title: 'Selecione o idioma',
+			title: 'Selecionar idioma',
 			options: [
+				{ id: 'system-lang', value: 'Sistema', checked: true },
+				{ id: 'en-us', value: 'Inglês' },
 				{ id: 'pt-br', value: 'Português' },
-				{ id: 'en-us', value: 'English' },
-				{ id: 'es-es', value: 'Español' },
+				{ id: 'es-es', value: 'Espanhol' },
 			],
 		},
 		file: {
 			title: 'Salvar currículo em',
 			options: [
-				{ id: 'resume-us', value: 'English' },
+				{ id: 'resume-us', value: 'Inglês' },
 				{ id: 'resume-ptbr', value: 'Português' },
-				{ id: 'resume-es', value: 'Español' },
+				{ id: 'resume-es', value: 'Espanhol' },
 			],
 		},
 	}
