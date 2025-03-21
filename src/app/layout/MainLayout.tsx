@@ -179,12 +179,12 @@ export const MainLayout = () => {
 			<section>
 				<h2>FORMAÇÃO</h2>
 				<ul>
-					<li>
+					{/* <li>
 						<strong>Engenharia da Computação</strong>
 						<br />
 						Universidade Virtual do Estado de São Paulo - Univesp (2025 -
 						Cursando)
-					</li>
+					</li> */}
 					<li>
 						<strong>Análise e Desenvolvimento de Sistemas</strong>
 						<br />
