@@ -1,6 +1,7 @@
 interface ModalConfig {
 	id: string
 	value: string
+	onClick?: () => void
 }
 
 export interface OptionsModalProps {

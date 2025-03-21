@@ -3,6 +3,7 @@ import { MainLayout } from './layout/MainLayout'
 import { BottomBar } from './shared/components/BottomBar'
 import { OptionsMenu } from './shared/components/OptionsMenu'
 import { OptionsModal } from './shared/components/OptionsModal'
+import { useTheme } from './shared/utils/useTheme'
 
 export const App = () => {
 	type ModalType = 'theme' | 'lang' | 'file'
@@ -11,19 +12,33 @@ export const App = () => {
 		isOpen: boolean
 	}>({ type: null, isOpen: false })
 
+	const { setTheme } = useTheme()
+
 	const modalConfigs = {
 		theme: {
 			title: 'Selecionar tema',
 			options: [
-				{ id: 'system-theme', value: 'Sistema', checked: true },
-				{ id: 'light', value: 'Claro' },
-				{ id: 'dark', value: 'Escuro' },
+				{
+					id: 'system-theme',
+					value: 'Sistema',
+					onClick: () => setTheme('system-theme'),
+				},
+				{
+					id: 'light',
+					value: 'Claro',
+					onClick: () => setTheme('light'),
+				},
+				{
+					id: 'dark',
+					value: 'Escuro',
+					onClick: () => setTheme('dark'),
+				},
 			],
 		},
 		lang: {
 			title: 'Selecionar idioma',
 			options: [
-				{ id: 'system-lang', value: 'Sistema', checked: true },
+				{ id: 'system-lang', value: 'Sistema' },
 				{ id: 'en-us', value: 'Inglês' },
 				{ id: 'pt-br', value: 'Português' },
 				{ id: 'es-es', value: 'Espanhol' },

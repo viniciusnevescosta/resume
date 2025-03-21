@@ -50,6 +50,7 @@ export const OptionsModal = ({
 				name='radio-group'
 				value={option.value}
 				type='radio'
+				onClick={option.onClick}
 			/>
 			<label htmlFor={option.id}>{option.value}</label>
 		</div>
