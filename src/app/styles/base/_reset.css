@@ -25,16 +25,17 @@ section {
 .icon {
 	padding: 0 0.5rem;
 	transition: background-color 0.2s ease-in-out;
+	border-radius: 0.5rem;
 }
 
 .icon:hover {
 	cursor: pointer;
 	background-color: var(--icon-hover-bg);
-	border-radius: 0.5rem;
 }
 
 .icon:active {
 	background-color: var(--icon-active-bg);
+	transform: scale(0.95)
 }
 
 @media (width <= 64rem) {
