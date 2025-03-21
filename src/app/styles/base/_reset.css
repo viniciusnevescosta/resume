@@ -1,0 +1,48 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+*::selection {
+	background-color: var(--bg-select);
+}
+
+body {
+	max-width: 50rem;
+	margin: 0 auto;
+	padding: 2rem;
+	background: var(--bg-color);
+	color: var(--text-color);
+	line-height: 1.6;
+}
+
+section {
+	text-align: justify;
+}
+
+.icon {
+	padding: 0 0.5rem;
+	transition: background-color 0.2s ease-in-out;
+}
+
+.icon:hover {
+	cursor: pointer;
+	background-color: var(--icon-hover-bg);
+	border-radius: 0.5rem;
+}
+
+.icon:active {
+	background-color: var(--icon-active-bg);
+}
+
+@media (width <= 64rem) {
+	body {
+		margin-bottom: 4rem;
+	}
+
+	section {
+		text-align: start;
+	}
+}
