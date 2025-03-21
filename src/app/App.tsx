@@ -6,7 +6,7 @@ import { OptionsModal } from './shared/components/OptionsModal'
 import { useTheme } from './shared/utils/useTheme'
 
 export const App = () => {
-	type ModalType = 'theme' | 'lang' | 'file'
+	type ModalType = 'theme' | 'lang'
 	const [activeModal, setActiveModal] = useState<{
 		type: ModalType | null
 		isOpen: boolean
@@ -43,15 +43,7 @@ export const App = () => {
 				{ id: 'pt-br', value: 'Português' },
 				{ id: 'es-es', value: 'Espanhol' },
 			],
-		},
-		file: {
-			title: 'Salvar currículo em',
-			options: [
-				{ id: 'resume-us', value: 'Inglês' },
-				{ id: 'resume-ptbr', value: 'Português' },
-				{ id: 'resume-es', value: 'Espanhol' },
-			],
-		},
+		}
 	}
 
 	const handleOpenModal = (type: ModalType): void => {

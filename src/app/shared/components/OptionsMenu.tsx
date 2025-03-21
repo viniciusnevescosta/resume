@@ -1,6 +1,6 @@
 import type { optionsMenuProps } from '../interfaces/IOptionsMenuProps'
 
-type modalType = 'theme' | 'lang' | 'file'
+type modalType = 'theme' | 'lang'
 
 export const OptionsMenu = ({ onClickModal }: optionsMenuProps) => {
 	const handleKeyPress = (event: React.KeyboardEvent, type: modalType) => {
@@ -37,8 +37,6 @@ export const OptionsMenu = ({ onClickModal }: optionsMenuProps) => {
 						title='Baixar currículo'
 						role='button'
 						tabIndex={0}
-						onClick={() => onClickModal('file')}
-						onKeyDown={e => handleKeyPress(e, 'file')}
 					/>
 				</nav>
 			</aside>
