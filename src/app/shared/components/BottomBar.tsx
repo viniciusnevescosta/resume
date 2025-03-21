@@ -3,12 +3,12 @@ import type { optionsMenuProps } from '../interfaces/IOptionsMenuProps'
 type modalType = 'theme' | 'lang' | 'file'
 
 export const BottomBar = ({ onClickModal }: optionsMenuProps) => {
- 	const handleKeyPress = (event: React.KeyboardEvent, type: modalType) => {
+	const handleKeyPress = (event: React.KeyboardEvent, type: modalType) => {
 		if (event.key === 'Enter' || event.key === ' ') {
 			onClickModal(type)
 		}
 	}
-  
+
 	return (
 		<>
 			<div className='bottom-bar'>
