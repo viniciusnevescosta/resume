@@ -5,7 +5,7 @@
 		"check": "biome check --unsafe --write .",
 		"preview": "vite preview",
 		"build": "tsc && vite build",
-		"predeploy": "pnpm check && git checkout main",
+		"predeploy": "git checkout main && git pull origin main",
 		"github": "rm -rf dist && python3 deploy.py"
 	},
 	"dependencies": {
