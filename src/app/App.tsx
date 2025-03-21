@@ -43,7 +43,7 @@ export const App = () => {
 				{ id: 'pt-br', value: 'Português' },
 				{ id: 'es-es', value: 'Espanhol' },
 			],
-		}
+		},
 	}
 
 	const handleOpenModal = (type: ModalType): void => {

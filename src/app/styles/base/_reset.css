@@ -35,7 +35,7 @@ section {
 
 .icon:active {
 	background-color: var(--icon-active-bg);
-	transform: scale(0.95)
+	transform: scale(0.95);
 }
 
 @media (width <= 64rem) {
