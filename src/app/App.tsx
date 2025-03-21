@@ -12,7 +12,7 @@ export const App = () => {
 		isOpen: boolean
 	}>({ type: null, isOpen: false })
 
-	const { setTheme } = useTheme()
+	const { setTheme, effectiveTheme } = useTheme()
 
 	const modalConfigs = {
 		theme: {
@@ -57,8 +57,8 @@ export const App = () => {
 	return (
 		<>
 			<MainLayout />
-			<OptionsMenu onClickModal={handleOpenModal} />
-			<BottomBar onClickModal={handleOpenModal} />
+			<OptionsMenu onClickModal={handleOpenModal} Theme={effectiveTheme} />
+			<BottomBar onClickModal={handleOpenModal} Theme={effectiveTheme} />
 
 			{activeModal.type && (
 				<OptionsModal

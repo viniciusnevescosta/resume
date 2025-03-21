@@ -2,7 +2,7 @@ import type { optionsMenuProps } from '../interfaces/IOptionsMenuProps'
 
 type modalType = 'theme' | 'lang'
 
-export const OptionsMenu = ({ onClickModal }: optionsMenuProps) => {
+export const OptionsMenu = ({ onClickModal, Theme }: optionsMenuProps) => {
 	const handleKeyPress = (event: React.KeyboardEvent, type: modalType) => {
 		if (event.key === 'Enter' || event.key === ' ') {
 			onClickModal(type)
@@ -15,7 +15,11 @@ export const OptionsMenu = ({ onClickModal }: optionsMenuProps) => {
 				<nav className='options-menu'>
 					<i
 						id='theme'
-						className='icon ri-moon-line ri-2x'
+						className={
+							Theme === 'dark'
+								? 'icon ri-sun-line ri-2x'
+								: 'icon ri-moon-line ri-2x'
+						}
 						title='Alterar tema'
 						role='button'
 						tabIndex={0}
