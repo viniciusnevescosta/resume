@@ -75,7 +75,6 @@
 	border-radius: 0.2rem;
 	border: 1px solid var(--skill-border);
 	user-select: none;
-	transition: background-color 0.2s ease;
 }
 
 .popup-options input {
@@ -126,6 +125,10 @@ custom-input label {
 }
 
 @media (width <= 64rem) {
+    .popup {
+        padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+    }
+    
 	.popup-exit {
 		display: none;
 	}
