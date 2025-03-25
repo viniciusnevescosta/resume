@@ -6,7 +6,7 @@
 		"preview": "vite preview",
 		"build": "tsc && vite build",
 		"predeploy": "git checkout main && git pull origin main",
-		"github": "rm -rf dist && python3 deploy.py"
+		"github": "pnpm predeploy && rm -rf dist && python3 deploy.py"
 	},
 	"dependencies": {
 		"i18next": "^24.2.3",
