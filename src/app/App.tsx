@@ -39,8 +39,8 @@ export const App = () => {
 			title: 'Selecionar idioma',
 			options: [
 				{ id: 'en-us', value: 'Inglês' },
-				{ id: 'pt-br', value: 'Português' },
 				{ id: 'es-es', value: 'Espanhol' },
+				{ id: 'pt-br', value: 'Português' },
 			],
 		},
 	}
