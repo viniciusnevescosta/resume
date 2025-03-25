@@ -4,7 +4,6 @@ header {
 }
 
 .contact-info {
-	color: var(--text2-color);
 	margin-bottom: 1.5rem;
 	display: flex;
 	flex-wrap: wrap;

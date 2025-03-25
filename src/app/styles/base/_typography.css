@@ -1,5 +1,9 @@
 a {
-	color: var(--text-color);
+	color: var(--text2-color);
+}
+
+a:visited {
+	text-decoration: none;
 }
 
 h1 {

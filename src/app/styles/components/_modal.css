@@ -37,6 +37,7 @@
 	z-index: 1001;
 	pointer-events: auto;
 	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+	border: 1px solid var(--skill-border);
 }
 
 .popup-title {
@@ -125,10 +126,10 @@ custom-input label {
 }
 
 @media (width <= 64rem) {
-    .popup {
-        padding: 2.5rem 1.5rem 2.5rem 1.5rem;
-    }
-    
+	.popup {
+		padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+	}
+
 	.popup-exit {
 		display: none;
 	}
