@@ -17,7 +17,7 @@ export const MainLayout = () => {
 						rel='noreferrer'
 						aria-label='Perfil no LinkedIn'
 					>
-						<i className='ri-linkedin-box-fill' />
+						<i className='ri-linkedin-box-line' />
 						LinkedIn
 					</a>
 					<a
@@ -36,14 +36,7 @@ export const MainLayout = () => {
 			</header>
 			<section>
 				<h2>RESUMO PROFISSIONAL</h2>
-				<p>
-					Desenvolvedor na área de Inovações em Tecnologia da MTP Brasil.
-					Trabalho com React (Material UI), C# (DDD, Clean Architecture) e
-					MySQL, desenvolvendo soluções escaláveis e bem estruturadas. Além da
-					experiência prática, aprofundo meus conhecimentos em AWS,
-					microserviços e arquitetura limpa. Atualmente, contribuo para o
-					desenvolvimento de um RPA com IA para otimizar processos internos.
-				</p>
+				<p>Trabalho com React e Vue para dar vida a interfaces dinâmicas, e no back-end navego por C# com DDD, além de construir microserviços escaláveis na AWS. Quando não estou codando, você me encontra jogando, tomando um café (ou três) ou mergulhado em projetos pessoais que misturam código e curiosidade.</p>
 			</section>
 			<section>
 				<h2>EXPERIÊNCIA PROFISSIONAL</h2>
@@ -52,8 +45,8 @@ export const MainLayout = () => {
 					<div className='job-period'>Jan 2025 - Presente</div>
 					<ul>
 						<li>
-							Desenvolvo sistema interno unificado com arquitetura de
-							microsserviços em C# (.NET 7) e frontend React (Material UI)
+							Desenvolvo sistema interno com arquitetura de microsserviços em C#
+							e frontend React
 						</li>
 						<li>
 							Implemento RPA para recrutamento com IA avaliadora de candidatos,
@@ -74,7 +67,7 @@ export const MainLayout = () => {
 					<ul>
 						<li>
 							Processei 50K+ registros de ponto através de ETL Node.js/MongoDB,
-							alimentando dashboards Power BI
+							alimentando KPIs
 						</li>
 						<li>
 							Realizei migração total para AWS EC2 com Docker, reduzindo custos
@@ -142,7 +135,7 @@ export const MainLayout = () => {
 							target='_blank'
 							rel='noreferrer'
 						>
-							Credencial verificável
+							Ver credencial verificável
 						</a>
 					</li>
 				</ul>
@@ -159,7 +152,7 @@ export const MainLayout = () => {
 							target='_blank'
 							rel='noreferrer'
 						>
-							Detalhes técnicos
+							Ver detalhes técnicos
 						</a>
 					</li>
 					<li>
@@ -171,7 +164,7 @@ export const MainLayout = () => {
 							target='_blank'
 							rel='noreferrer'
 						>
-							Detalhes técnicos
+							Ver detalhes técnicos
 						</a>
 					</li>
 				</ul>
@@ -196,12 +189,6 @@ export const MainLayout = () => {
 				<h2>IDIOMAS</h2>
 				<div className='language-proficiency'>
 					<div className='proficiency-item'>
-						<strong>Português</strong>
-						<br />
-						Nativo
-					</div>
-					<br />
-					<div className='proficiency-item'>
 						<strong>Inglês</strong>
 						<br />
 						Fluente
@@ -213,6 +200,12 @@ export const MainLayout = () => {
 						<br />
 						Básico
 						<br />
+					</div>
+					<br />
+					<div className='proficiency-item'>
+						<strong>Português</strong>
+						<br />
+						Nativo
 					</div>
 				</div>
 			</section>
