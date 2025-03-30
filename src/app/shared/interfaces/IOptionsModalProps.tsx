@@ -1,6 +1,7 @@
 interface ModalConfig {
 	id: string
 	value: string
+	checked?: boolean
 	onClick?: () => void
 }
 

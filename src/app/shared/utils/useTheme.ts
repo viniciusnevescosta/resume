@@ -10,7 +10,15 @@ const getSystemTheme = (): 'light' | 'dark' => {
 
 const getStoredTheme = (): Theme => {
 	if (typeof window === 'undefined') return 'system-theme'
-	return (localStorage.getItem('theme') as Theme) || 'system-theme'
+
+	let theme = localStorage.getItem('theme') as Theme
+
+	if (!theme) {
+		theme = 'system-theme'
+		localStorage.setItem('theme', theme)
+	}
+
+	return theme
 }
 
 const getEffectiveTheme = (theme: Theme): 'light' | 'dark' => {

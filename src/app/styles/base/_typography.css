@@ -1,5 +1,9 @@
 a {
-	color: var(--text-color);
+	color: var(--text2-color);
+}
+
+a:visited {
+	text-decoration: none;
 }
 
 h1 {
@@ -21,4 +25,8 @@ h3 {
 h3 {
 	margin: 0;
 	border-bottom: none;
+}
+
+article h3 {
+	font-size: 1.25rem;
 }
