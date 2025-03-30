@@ -3,8 +3,8 @@
 	"scripts": {
 		"dev": "vite",
 		"check": "biome check --unsafe --write .",
-		"preview": "vite preview",
 		"build": "tsc && vite build",
+		"qa": "pnpm build && vite preview",
 		"predeploy": "git checkout main && git pull origin main",
 		"github": "pnpm predeploy && rm -rf dist && python3 deploy.py"
 	},
