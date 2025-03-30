@@ -12,7 +12,7 @@ export const App = () => {
 		isOpen: boolean
 	}>({ type: null, isOpen: false })
 
-	const { setTheme, effectiveTheme } = useTheme()
+	const { setTheme, effectiveTheme, theme } = useTheme()
 
 	const modalConfigs = {
 		theme: {
@@ -21,16 +21,19 @@ export const App = () => {
 				{
 					id: 'system-theme',
 					value: 'Sistema',
+					checked: theme === 'system-theme',
 					onClick: () => setTheme('system-theme'),
 				},
 				{
 					id: 'light',
 					value: 'Claro',
+					checked: theme === 'light',
 					onClick: () => setTheme('light'),
 				},
 				{
 					id: 'dark',
 					value: 'Escuro',
+					checked: theme === 'dark',
 					onClick: () => setTheme('dark'),
 				},
 			],

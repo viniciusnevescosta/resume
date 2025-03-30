@@ -51,6 +51,7 @@ export const OptionsModal = ({
 				value={option.value}
 				type='radio'
 				onClick={option.onClick}
+				defaultChecked={option.checked}
 			/>
 			<label htmlFor={option.id}>{option.value}</label>
 		</div>
