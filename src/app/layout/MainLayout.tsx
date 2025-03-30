@@ -297,7 +297,6 @@ export const MainLayout = () => {
 				<section>
 					<h2>IDIOMAS</h2>
 					<ul className='language-proficiency'>
-						{/* deixar inline */}
 						<li itemScope itemType='http://schema.org/Language'>
 							<strong itemProp='name'>Inglês</strong>
 							<br />
