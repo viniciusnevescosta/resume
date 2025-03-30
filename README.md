@@ -18,6 +18,7 @@ My minimalist, responsive curriculum vitae with multi-language support and moder
 ## Stack Overview
 
 - **Languages**:
+  <br>
   ![REACTJS](https://img.shields.io/badge/-React-3178C6?logo=react&logoColor=white)
   ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white)
   ![CSS3](https://img.shields.io/badge/-CSS3-646CFF?logo=css3&logoColor=white)
