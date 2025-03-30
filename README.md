@@ -3,9 +3,9 @@
 [![Live Demo](https://img.shields.io/badge/%F0%9F%9A%80-Live%20Demo-2EA44F)](https://viniciusnevescosta.github.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-A minimalist, responsive curriculum vitae with multi-language support and modern web practices.
+My minimalist, responsive curriculum vitae with multi-language support and modern web practices.
 
-<!-- ![CV Preview](./screenshot.png) Add your screenshot -->
+![image](https://github.com/user-attachments/assets/6e05159b-1b25-4230-9161-1313c7615976)
 
 ## Core Features
 
