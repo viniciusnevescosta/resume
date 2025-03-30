@@ -9,16 +9,11 @@ My minimalist, responsive curriculum vitae with multi-language support and moder
 
 ## Core Features
 
-- 🌓 **Smart Themes**  
-  Light/dark mode toggle with CSS custom properties
-- 🌍 **Multi-Lingual**  
-  English, Portuguese, and Spanish support
-- 📱 **Fluid Responsiveness**  
-  Optimized for all screen sizes
-- 🖨️ **Print-Ready**  
-  Clean formatting for physical copies
-- ♿ **Accessibility First**  
-  Semantic HTML and ARIA labels
+- **Smart Themes**: Light/dark mode toggle with CSS custom properties
+- **Multi-Lingual**: English, Portuguese, and Spanish support
+- **Fluid Responsiveness**: Optimized for all screen sizes
+- **Print-Ready**: Clean formatting for physical copies
+- **Accessibility First**: Semantic HTML and ARIA labels
 
 ## Stack Overview
 
@@ -87,10 +82,10 @@ The deployment script will:
 
 ## Attributions
 
-🎨 Flexoki Color Scheme
+- **Flexoki Color Scheme:**
 Base theme colors adapted from [Flexoki](https://github.com/kepano/flexoki) by [Steph Ango](https://stephango.com/) (MIT License)
 
-✨ Remix Icons
+- **Remix Icons:**
 Interface icons provided by [Remix Icon](https://remixicon.com/) (Apache-2.0 license)
 
 ## License
