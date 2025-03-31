@@ -1,0 +1,35 @@
+.container-aside {
+	display: flex;
+	justify-content: end;
+	position: fixed;
+	height: 100%;
+	right: 0;
+	top: 0;
+}
+
+.container-aside aside {
+	display: flex;
+	align-items: center;
+	padding: 0.5rem;
+}
+
+.container-aside .options-menu {
+	display: flex;
+	flex-direction: column;
+	padding: 0.5rem;
+	margin-right: 2rem;
+	border: 0.1875rem solid var(--text-color);
+	border-radius: 0.5rem;
+	opacity: 35%;
+	transition: opacity 0.1s ease;
+}
+
+.container-aside .options-menu:hover {
+	opacity: 100%;
+}
+
+@media (width <= 64rem) {
+	.container-aside {
+		display: none;
+	}
+}

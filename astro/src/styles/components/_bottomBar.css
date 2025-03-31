@@ -1,0 +1,26 @@
+.bottom-bar {
+	display: none;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	padding: 0.8rem;
+	width: 100%;
+	border-top: 1px solid var(--skill-border);
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+	background: var(--bg2-color);
+}
+
+.bottom-bar nav {
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+	height: 100%;
+	width: 100%;
+}
+
+@media (width <= 64rem) {
+	.bottom-bar {
+		display: flex;
+	}
+}
