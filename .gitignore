@@ -24,4 +24,3 @@ pnpm-lock.yaml
 *.sln
 *.sw?
 .ropeproject
-handleCommit.py
