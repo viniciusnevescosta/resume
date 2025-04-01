@@ -1,13 +1,13 @@
 interface ModalConfig {
-	id: string
-	value: string
-	checked?: boolean
-	onClick?: () => void
+    id: string
+    value: string
+    checked?: boolean
+    onClick?: () => void
 }
 
 export interface OptionsModalProps {
-	modalTitle: string
-	modalOptions: ModalConfig[]
-	isOpen: boolean
-	onClose: () => void
+    modalTitle: string
+    modalOptions: ModalConfig[]
+    isOpen: boolean
+    onClose: () => void
 }
