@@ -9,6 +9,5 @@ import pdf from 'astro-pdf'
 // https://astro.build/config
 export default defineConfig({
     integrations: [react(), sitemap(), partytown()], //  pdf() - https://ler.quest/astro-pdf/#other-configuration-options
-    site: 'https://viniciusnevescosta.github.io',
-    base: ''
+    site: 'https://resume.viniciusnevescosta.com',
 })
