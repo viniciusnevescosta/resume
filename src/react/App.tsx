@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { BottomBar } from './shared/components/_BottomBar'
 import { OptionsMenu } from './shared/components/_Menu'
 import { OptionsModal } from './shared/components/_Modal'
-import { useTheme } from './shared/utils/useTheme'
+import { useTheme } from './shared/hooks/useTheme'
+import { useLanguage } from './shared/hooks/useLang'
 
 export const App = () => {
     type ModalType = 'theme' | 'lang'
@@ -12,6 +13,7 @@ export const App = () => {
     }>({ type: null, isOpen: false })
 
     const { setTheme, effectiveTheme, theme } = useTheme()
+    const { setLanguage, language } = useLanguage()
 
     const modalConfigs = {
         theme: {
@@ -40,9 +42,24 @@ export const App = () => {
         lang: {
             title: 'Selecionar idioma',
             options: [
-                { id: 'en-us', value: 'Inglês' },
-                { id: 'es-es', value: 'Espanhol' },
-                { id: 'pt-br', value: 'Português' }
+                {
+                    id: 'en-us',
+                    value: 'Inglês',
+                    checked: language === 'en-us',
+                    onClick: () => setLanguage('en-us')
+                },
+                {
+                    id: 'es-es',
+                    value: 'Espanhol',
+                    checked: language === 'es-es',
+                    onClick: () => setLanguage('es-es')
+                },
+                {
+                    id: 'pt-br',
+                    value: 'Português',
+                    checked: language === 'pt-br',
+                    onClick: () => setLanguage('pt-br')
+                }
             ]
         }
     }
