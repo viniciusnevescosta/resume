@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { BottomBar } from './shared/components/_BottomBar'
-import { OptionsMenu } from './shared/components/_Menu'
-import { OptionsModal } from './shared/components/_Modal'
+import { BottomBar } from './shared/components/BottomBar'
+import { OptionsMenu } from './shared/components/Menu'
+import { OptionsModal } from './shared/components/Modal'
 import { useTheme } from './shared/hooks/useTheme'
 import { useLanguage } from './shared/hooks/useLang'
 
