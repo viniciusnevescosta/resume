@@ -10,5 +10,9 @@ import pdf from 'astro-pdf'
 export default defineConfig({
     integrations: [react(), sitemap(), partytown()], //  pdf() - https://ler.quest/astro-pdf/#other-configuration-options
     site: 'https://viniciusnevescosta.github.io',
-    base: ''
+    base: '',
+    i18n: {
+        locales: ['es', 'en', 'pt-br'],
+        defaultLocale: 'en'
+    }
 })
