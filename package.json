@@ -2,15 +2,17 @@
     "type": "module",
     "scripts": {
         "dev": "astro dev",
-        "check": "prettier . --write && eslint .",
-        "build": "astro build",
+        "check": "prettier --write  \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\" && eslint --fix \"src/**/*.{js,ts,jsx,tsx,astro}\"",
+        "build": "astro check && astro build",
         "preview": "astro preview",
         "astro": "astro"
     },
     "dependencies": {
+        "@astrojs/check": "^0.9.4",
         "@astrojs/partytown": "^2.1.4",
         "@astrojs/react": "^4.2.2",
         "@astrojs/sitemap": "^3.3.0",
+        "@astrojs/ts-plugin": "^1.10.4",
         "@types/react": "^19.0.12",
         "@types/react-dom": "^19.0.4",
         "astro": "^5.5.5",
@@ -18,7 +20,8 @@
         "astro-pdf": "^1.7.2",
         "react": "^19.1.0",
         "react-dom": "^19.1.0",
-        "remixicon": "^4.6.0"
+        "remixicon": "^4.6.0",
+        "typescript": "^5.8.2"
     },
     "devDependencies": {
         "@typescript-eslint/parser": "^8.28.0",
