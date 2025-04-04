@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { BottomBar } from './shared/components/BottomBar'
-import { OptionsMenu } from './shared/components/Menu'
-import { OptionsModal } from './shared/components/Modal'
-import { useTheme } from './shared/hooks/useTheme'
-import { useLanguage } from './shared/hooks/useLang'
+import { BottomBar } from './components/BottomBar'
+import { OptionsMenu } from './components/Menu'
+import { OptionsModal } from './components/Modal'
+import { useTheme } from './hooks/useTheme'
+import { useLanguage } from './hooks/useLang'
 
 export const App = () => {
     type ModalType = 'theme' | 'lang'
