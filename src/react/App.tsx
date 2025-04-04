@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState } from 'react'
 import { BottomBar } from './components/BottomBar'
 import { OptionsMenu } from './components/Menu'
@@ -12,8 +13,8 @@ export const App = () => {
         isOpen: boolean
     }>({ type: null, isOpen: false })
 
-    const { setTheme, effectiveTheme, theme } = useTheme()
-    const { setLanguage, language } = useLanguage()
+    const { theme, effectiveTheme, setTheme } = useTheme()
+    const { language, setLanguage } = useLanguage()
 
     const modalConfigs = {
         theme: {
@@ -43,22 +44,22 @@ export const App = () => {
             title: 'Selecionar idioma',
             options: [
                 {
-                    id: 'en-us',
+                    id: 'en',
                     value: 'Inglês',
-                    checked: language === 'en-us',
-                    onClick: () => setLanguage('en-us')
+                    checked: language === 'en',
+                    onClick: () => setLanguage('en')
                 },
                 {
-                    id: 'es-es',
+                    id: 'es',
                     value: 'Espanhol',
-                    checked: language === 'es-es',
-                    onClick: () => setLanguage('es-es')
+                    checked: language === 'es',
+                    onClick: () => setLanguage('es')
                 },
                 {
-                    id: 'pt-br',
+                    id: 'pt',
                     value: 'Português',
-                    checked: language === 'pt-br',
-                    onClick: () => setLanguage('pt-br')
+                    checked: language === 'pt',
+                    onClick: () => setLanguage('pt')
                 }
             ]
         }

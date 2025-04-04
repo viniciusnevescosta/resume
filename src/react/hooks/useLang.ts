@@ -1,53 +1,48 @@
 import { useEffect, useState } from 'react'
 
-type Language = 'pt-br' | 'es-es' | 'en-us'
+type Language = 'pt' | 'es' | 'en'
 
-/**
- * Detecta a linguagem do sistema usando navigator.language.
- * Se o idioma iniciar com 'pt' ou 'es', retorna respectivamente;
- * caso contrário, retorna 'en-us' como fallback.
- */
-const getSystemLanguage = (): Language => {
-    if (typeof navigator === 'undefined' || !navigator.language) return 'en-us'
-
-    const lang = navigator.language.toLowerCase()
-    if (lang.startsWith('pt')) return 'pt-br'
-    if (lang.startsWith('es')) return 'es-es'
-    return 'en-us'
+const getSavedLanguage = (): Language | null => {
+  if (typeof window === 'undefined') return null
+  const lang = localStorage.getItem('language') as Language | null
+  return lang && ['pt', 'es', 'en'].includes(lang) ? lang : null
 }
 
-/**
- * Tenta recuperar a linguagem armazenada em localStorage.
- * Retorna o valor somente se for um dos idiomas mapeados; caso contrário, retorna null.
- */
-const getStoredLanguage = (): Language | null => {
-    if (typeof window === 'undefined') return null
-
-    const stored = localStorage.getItem('language')
-    if (stored === 'pt-br' || stored === 'es-es' || stored === 'en-us') {
-        return stored
-    }
-    return null
-}
-
-/**
- * Hook para gerenciar a linguagem.
- * Se houver uma linguagem válida armazenada, ela é utilizada;
- * caso contrário, é usada a linguagem detectada do sistema (com fallback para 'en-us').
- */
 export const useLanguage = () => {
-    const [language, setLanguageState] = useState<Language>(() => {
-        const stored = getStoredLanguage()
-        return stored ? stored : getSystemLanguage()
-    })
+  const [language, setLanguage] = useState<Language>(() => {
 
-    useEffect(() => {
-        localStorage.setItem('language', language)
-        document.documentElement.setAttribute('lang', language)
-    }, [language])
+    const urlLang = window.location.pathname.split('/')[1] as Language
+    if (['pt', 'es', 'en'].includes(urlLang)) return urlLang
 
-    return {
-        language,
-        setLanguage: setLanguageState
+    const saved = getSavedLanguage()
+    if (saved) return saved
+
+    const browserLang = navigator.language.split('-')[0].toLowerCase()
+    return browserLang === 'pt' || browserLang === 'es' ? browserLang : 'en'
+  })
+
+  const changeLanguage = (newLang: Language) => {
+    localStorage.setItem('language', newLang)
+    
+    const currentLang = window.location.pathname.split('/')[1]
+    if (currentLang !== newLang) {
+      window.location.href = window.location.href.replace(`/${currentLang}`, `/${newLang}`)
     }
+  }
+
+  useEffect(() => {
+    const savedLang = getSavedLanguage()
+    const urlLang = window.location.pathname.split('/')[1] as Language
+    
+    if (savedLang && savedLang !== urlLang) {
+      window.location.href = `/${savedLang}${window.location.pathname.substring(3)}`
+    }
+
+    document.documentElement.lang = language
+  }, [language])
+
+  return {
+    language,
+    setLanguage: changeLanguage
+  }
 }
