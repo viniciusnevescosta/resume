@@ -1,5 +1,11 @@
+---
+import type { Certifications } from '../interfaces/ICertifications'
+
+const { content } = Astro.props as Certifications
+---
+
 <section>
-    <h2>CERTIFICAÇÕES</h2>
+    <h2>{content.title}</h2>
     <ul>
         <li
             itemscope
@@ -15,8 +21,9 @@
                 href="https://www.credly.com/badges/517fd129-d1e7-4851-a9f7-09a2abadbf01"
                 target="_blank"
                 rel="noreferrer"
+                title={content.actionTitle}
             >
-                Ver credencial verificável
+                {content.actionLink}
             </a>
         </li>
     </ul>

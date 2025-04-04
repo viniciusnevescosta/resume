@@ -1,9 +1,15 @@
+---
+import type { HardSkills } from '../interfaces/IHardSkills'
+
+const { content } = Astro.props as HardSkills
+---
+
 <section itemscope itemtype="http://schema.org/ItemList">
-    <h2 itemprop="name">TECNOLOGIAS</h2>
+    <h2 itemprop="name">{content.title}</h2>
     <div class="skill-category">
         <dl class="skill-group">
             <dt>
-                <strong>Front-end</strong>
+                <strong>Web</strong>
             </dt>
             <dd itemprop="itemListElement" class="skill-item">React</dd>
             <dd itemprop="itemListElement" class="skill-item">Vue</dd>
@@ -22,7 +28,7 @@
         </dl>
         <dl class="skill-group">
             <dt>
-                <strong>Banco de Dados</strong>
+                <strong>{content.database}</strong>
             </dt>
             <dd itemprop="itemListElement" class="skill-item">MySQL</dd>
             <dd itemprop="itemListElement" class="skill-item">PostgreSQL</dd>

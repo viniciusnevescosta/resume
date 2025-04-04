@@ -1,15 +1,22 @@
+---
+import type { Header } from '../interfaces/IHeader'
+
+const { content } = Astro.props as Header
+---
+
 <header>
     <h1 itemprop="name">VINÍCIUS NEVES COSTA</h1>
     <nav
         class="contact-info"
-        aria-label="Contatos e redes sociais"
+        aria-label={content.navAriaLabel}
         itemprop="contactPoint"
         itemscope
         itemtype="http://schema.org/ContactPoint"
     >
         <a
             href="mailto:contact@viniciusnevescosta.com"
-            aria-label="Enviar email"
+            aria-label={content.emailAriaLabel}
+            title={content.emailAriaLabel}
             itemprop="email"
         >
             <i class="ri-mail-line"></i>
@@ -19,7 +26,8 @@
             href="https://linkedin.com/in/nevesco"
             target="_blank"
             rel="noreferrer"
-            aria-label="Perfil no LinkedIn"
+            aria-label={content.linkedinAriaLabel}
+            title={content.linkedinAriaLabel}
             itemprop="url"
         >
             <i class="ri-linkedin-box-line"></i>
@@ -29,7 +37,8 @@
             href="https://github.com/viniciusnevescosta"
             target="_blank"
             rel="noreferrer"
-            aria-label="Perfil no GitHub"
+            aria-label={content.githubAriaLabel}
+            title={content.githubAriaLabel}
             itemprop="url"
         >
             <i class="ri-github-line"></i>

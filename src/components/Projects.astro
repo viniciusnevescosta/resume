@@ -1,15 +1,20 @@
+---
+import type { Projects } from '../interfaces/IProjects'
+
+const { content } = Astro.props as Projects
+---
+
 <section>
-    <h2>PROJETOS DESTACADOS</h2>
+    <h2>{content.title}</h2>
     <ul>
         <li itemscope itemtype="http://schema.org/CreativeWork">
             <strong itemprop="name">CommitFlow</strong>
             <p>
-                Ferramenta CLI que simplifica a criação de commits e branches
-                semânticos
+                {content.project_2.description}
             </p>
             <meta
                 itemprop="description"
-                content="Ferramenta CLI que simplifica a criação de commits e branches semânticos"
+                content={content.project_2.description}
             />
             <link
                 itemprop="url"
@@ -19,19 +24,19 @@
                 href="https://github.com/viniciusnevescosta/CommitFlow"
                 target="_blank"
                 rel="noreferrer"
+                title={content.actionTitle}
             >
-                Ver detalhes técnicos
+                {content.actionLink}
             </a>
         </li>
         <li itemscope itemtype="http://schema.org/CreativeWork">
             <strong itemprop="name">Equilíbrio Natural - ERP</strong>
             <p>
-                Sistema multiplataforma para gestão de estoque da empresa
-                Equilíbrio Natural
+                {content.project.description}
             </p>
             <meta
                 itemprop="description"
-                content="Sistema multiplataforma para gestão de estoque da empresa Equilíbrio Natural"
+                content={content.project.description}
             />
             <link
                 itemprop="url"
@@ -41,8 +46,9 @@
                 href="https://github.com/FrogDevs/etec-final-course-project"
                 target="_blank"
                 rel="noreferrer"
+                title={content.actionTitle}
             >
-                Ver detalhes técnicos
+                {content.actionLink}
             </a>
         </li>
     </ul>

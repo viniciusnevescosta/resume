@@ -1,21 +1,28 @@
+---
+import type { Education } from '../interfaces/IEducation'
+
+const { content } = Astro.props as Education
+---
+
 <section>
-    <h2>FORMAÇÃO</h2>
+    <h2>{content.title}</h2>
     <ul>
         <li itemscope itemtype="http://schema.org/EducationalEvent">
             <span itemprop="name">
-                <strong>Análise e Desenvolvimento de Sistemas</strong>
+                <strong>{content.formation.title}</strong>
             </span>
             <div
                 itemprop="organizer"
                 itemscope
                 itemtype="http://schema.org/EducationalOrganization"
             >
-                <span itemprop="name">Escola Técnica Estadual - Etec</span>
+                <span itemprop="name">{content.formation.organization}</span>
                 <p class="period">
                     <time itemprop="startDate" datetime="2020-02">
-                        Fev 2020
+                        {content.formation.starDate}
                     </time>{' '}
-                    - <time itemprop="endDate" datetime="2022-12">Dez 2022</time
+                    - <time itemprop="endDate" datetime="2022-12"
+                        >{content.formation.endDate}</time
                     >
                 </p>
             </div>

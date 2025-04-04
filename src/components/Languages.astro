@@ -1,20 +1,32 @@
+---
+import type { Languages } from '../interfaces/ILanguages'
+
+const { content } = Astro.props as Languages
+---
+
 <section>
-    <h2>IDIOMAS</h2>
+    <h2>{content.title}</h2>
     <ul class="language-proficiency">
         <li itemscope itemtype="http://schema.org/Language">
-            <strong itemprop="name">Inglês</strong>
+            <strong itemprop="name">{content.language_3.name}</strong>
             <br />
-            <span itemprop="proficiencyLevel">Fluente</span>
+            <span itemprop="proficiencyLevel"
+                >{content.language_3.proficiencyLevel}</span
+            >
         </li>
         <li itemscope itemtype="http://schema.org/Language">
-            <strong itemprop="name">Espanhol</strong>
+            <strong itemprop="name">{content.language_2.name}</strong>
             <br />
-            <span itemprop="proficiencyLevel">Básico</span>
+            <span itemprop="proficiencyLevel"
+                >{content.language_2.proficiencyLevel}</span
+            >
         </li>
         <li itemscope itemtype="http://schema.org/Language">
-            <strong itemprop="name">Português</strong>
+            <strong itemprop="name">{content.language.name}</strong>
             <br />
-            <span itemprop="proficiencyLevel">Nativo</span>
+            <span itemprop="proficiencyLevel"
+                >{content.language.proficiencyLevel}</span
+            >
         </li>
     </ul>
 </section>
