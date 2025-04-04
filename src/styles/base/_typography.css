@@ -8,7 +8,7 @@ a:visited {
 
 h1 {
     color: var(--text-color);
-    font-size: 2.25rem;
+    font-size: 2rem;
     margin-bottom: 0.75rem;
     letter-spacing: -0.03125rem;
 }
@@ -16,9 +16,9 @@ h1 {
 h2,
 h3 {
     color: var(--text-color);
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: 2rem 0 1rem;
-    border-bottom: 0.1875rem solid var(--text-color);
+    border-bottom: 0.1rem solid var(--text-color);
     padding-bottom: 0.5rem;
 }
 
@@ -27,8 +27,8 @@ h3 {
     border-bottom: none;
 }
 
-article h3 {
-    font-size: 1.25rem;
+.popup-title {
+    font-size: 1.5rem;
 }
 
 .job-title {
