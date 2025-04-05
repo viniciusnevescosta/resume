@@ -1,0 +1,23 @@
+{
+  "menu": {
+    "themeTitle": "Cambiar tema",
+    "langTitle": "Cambiar idioma",
+    "fileTitle": "Guardar currículum (PDF)"
+  },
+  "modal": {
+    "theme": {
+      "title": "Seleccionar tema",
+      "systemTheme": "Sistema",
+      "light": "Claro",
+      "dark": "Oscuro"
+    },
+    "lang": {
+      "title": "Seleccionar idioma",
+      "en": "Inglés",
+      "es": "Español",
+      "pt": "Portugués"
+    },
+    "closeMessage": "Cerrar",
+    "kbdMessage": "Presiona <kbd>ESC</kbd> para cerrar"
+  }
+}

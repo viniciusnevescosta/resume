@@ -1,0 +1,23 @@
+{
+  "menu": {
+    "themeTitle": "Change theme",
+    "langTitle": "Change language",
+    "fileTitle": "Save resume (PDF)"
+  },
+  "modal": {
+    "theme": {
+      "title": "Select theme",
+      "systemTheme": "System",
+      "light": "Light",
+      "dark": "Dark"
+    },
+    "lang": {
+      "title": "Select language",
+      "en": "English",
+      "es": "Spanish",
+      "pt": "Portuguese"
+    },
+    "closeMessage": "Close",
+    "kbdMessage": "Press <kbd>ESC</kbd> to close"
+  }
+}

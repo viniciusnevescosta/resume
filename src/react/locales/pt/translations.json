@@ -1,0 +1,23 @@
+{
+  "menu": {
+    "themeTitle": "Alterar tema",
+    "langTitle": "Alterar idioma",
+    "fileTitle": "Salvar currículo (PDF)"
+  },
+  "modal": {
+    "theme": {
+      "title": "Selecionar tema",
+      "systemTheme": "Sistema",
+      "light": "Claro",
+      "dark": "Escuro"
+    },
+    "lang": {
+      "title": "Selecionar idioma",
+      "en": "Inglês",
+      "es": "Espanhol",
+      "pt": "Português"
+    },
+    "closeMessage": "Fechar",
+    "kbdMessage": "Pressione <kbd>ESC</kbd> para fechar"
+  }
+}

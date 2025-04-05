@@ -1,27 +1,34 @@
 {
-	"type": "module",
-	"scripts": {
-		"dev": "vite",
-		"check": "biome check --unsafe --write .",
-		"build": "tsc && vite build",
-		"qa": "pnpm build && vite preview",
-		"predeploy": "git checkout main && git pull origin main",
-		"github": "pnpm predeploy && rm -rf dist && python3 deploy.py"
-	},
-	"dependencies": {
-		"i18next": "^24.2.3",
-		"react": "^19.0.0",
-		"react-dom": "^19.0.0",
-		"react-i18next": "^15.4.1",
-		"remixicon": "^4.6.0"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
-		"@types/react": "^19.0.10",
-		"@types/react-dom": "^19.0.4",
-		"@vitejs/plugin-react-swc": "^3.8.0",
-		"typescript": "~5.7.2",
-		"vite": "^6.2.0",
-		"vite-plugin-sitemap": "^0.7.1"
-	}
+    "type": "module",
+    "scripts": {
+        "dev": "astro dev",
+        "check": "prettier --write  \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\" && eslint --fix \"src/**/*.{js,ts,jsx,tsx,astro}\"",
+        "build": "astro check && astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@astrojs/check": "^0.9.4",
+        "@astrojs/partytown": "^2.1.4",
+        "@astrojs/react": "^4.2.2",
+        "@astrojs/sitemap": "^3.3.0",
+        "@astrojs/ts-plugin": "^1.10.4",
+        "@types/react": "^19.0.12",
+        "@types/react-dom": "^19.0.4",
+        "astro": "^5.5.5",
+        "astro-analytics": "^2.7.0",
+        "astro-pdf": "^1.7.2",
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0",
+        "remixicon": "^4.6.0",
+        "typescript": "^5.8.2"
+    },
+    "devDependencies": {
+        "@typescript-eslint/parser": "^8.28.0",
+        "eslint": "^9.23.0",
+        "eslint-plugin-astro": "^1.3.1",
+        "eslint-plugin-jsx-a11y": "^6.10.2",
+        "prettier": "^3.5.3",
+        "prettier-plugin-astro": "^0.14.1"
+    }
 }

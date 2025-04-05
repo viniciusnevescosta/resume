@@ -1,0 +1,39 @@
+---
+import type { HardSkills } from '../interfaces/IHardSkills'
+
+const { content } = Astro.props as HardSkills
+---
+
+<section itemscope itemtype="http://schema.org/ItemList">
+    <h2 itemprop="name">{content.title}</h2>
+    <div class="skill-category">
+        <dl class="skill-group">
+            <dt>
+                <strong>Web</strong>
+            </dt>
+            <dd itemprop="itemListElement" class="skill-item">React</dd>
+            <dd itemprop="itemListElement" class="skill-item">Vue</dd>
+            <dd itemprop="itemListElement" class="skill-item">MUI</dd>
+            <dd itemprop="itemListElement" class="skill-item">Tailwind</dd>
+            <dd itemprop="itemListElement" class="skill-item">Typescript</dd>
+        </dl>
+        <dl class="skill-group">
+            <dt>
+                <strong>Back-end / Cloud</strong>
+            </dt>
+            <dd itemprop="itemListElement" class="skill-item">C#</dd>
+            <dd itemprop="itemListElement" class="skill-item">Golang</dd>
+            <dd itemprop="itemListElement" class="skill-item">Docker</dd>
+            <dd itemprop="itemListElement" class="skill-item">AWS</dd>
+        </dl>
+        <dl class="skill-group">
+            <dt>
+                <strong>{content.database}</strong>
+            </dt>
+            <dd itemprop="itemListElement" class="skill-item">MySQL</dd>
+            <dd itemprop="itemListElement" class="skill-item">PostgreSQL</dd>
+            <dd itemprop="itemListElement" class="skill-item">MongoDB</dd>
+            <dd itemprop="itemListElement" class="skill-item">Firebase</dd>
+        </dl>
+    </div>
+</section>

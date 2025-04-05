@@ -1,0 +1,94 @@
+{
+    "header": {
+        "navAriaLabel": "Contatos e redes sociais",
+        "emailAriaLabel": "Enviar E-mail",
+        "linkedinAriaLabel": "Perfil no LinkedIn",
+        "githubAriaLabel": "Perfil no GitHub"
+    },
+    "summary": {
+        "title": "RESUMO PROFISSIONAL",
+        "summary": "Trabalho com React e Vue para dar vida a interfaces dinâmicas, e no back-end navego por C# com DDD, além de construir microserviços escaláveis na AWS. Quando não estou codando, você me encontra jogando, tomando um café (ou três) ou mergulhado em projetos pessoais que misturam código e curiosidade."
+    },
+    "experience": {
+        "title": "EXPERIÊNCIA PROFISSIONAL",
+        "experience_3": {
+            "jobTitle": "Dev Full Stack Jr.",
+            "startDate": "Jan 2025",
+            "endDate": "Presente",
+            "bullets": {
+                "firstBullet": "Desenvolvo sistema interno com arquitetura de microsserviços em C# e frontend React",
+                "secondBullet": {
+                    "firstBullet": "Implemento RPA para recrutamento com IA avaliadora de candidatos, integrando:",
+                    "subList": {
+                        "firstBullet": "Processamento assíncrono de currículos",
+                        "secondBullet": "Pipeline de análise de compatibilidade técnica via agentes LLM customizados"
+                    }
+                }
+            }
+        },
+        "experience_2": {
+            "jobTitle": "Analista de Infra Jr.",
+            "startDate": "Jan 2024",
+            "endDate": "Dez 2024",
+            "bullets": {
+                "firstBullet": "Processei 50K+ registros de ponto através de ETL Node.js/MongoDB, alimentando KPIs",
+                "secondBullet": "Realizei migração total para AWS EC2 com Docker, reduzindo custos de infraestrutura em R$ 60k/ano versus solução on-premise anterior",
+                "thirdBullet": "Configurei 10+ pipelines CI/CD no Azure DevOps para deploy automático de containers Docker"
+            }
+        },
+        "experience": {
+            "jobTitle": "Assistente de TI",
+            "startDate": "Mar 2023",
+            "endDate": "Dez 2023",
+            "bullets": {
+                "firstBullet": "Gerenciei inventário de 300+ ativos de TI para 200+ usuários",
+                "secondBullet": "Atendi chamados técnicos com média de 92% de resolução em primeira linha",
+                "thirdBullet": "Implementei políticas de segurança no Microsoft 365 reduzindo incidentes em 65%"
+            }
+        }
+    },
+    "hardSkills": {
+        "title": "TECNOLOGIAS",
+        "database": "Banco de Dados"
+    },
+    "certifications": {
+        "title": "CERTIFICAÇÕES",
+        "actionLink": "Ver credencial verificável",
+        "actionTitle": "Certificação"
+    },
+    "projects": {
+        "title": "PROJETOS DESTACADOS",
+        "actionLink": "Ver detalhes técnicos",
+        "actionTitle": "Repositório",
+        "project_2": {
+            "description": "Ferramenta CLI que simplifica a criação de commits e branches semânticos"
+        },
+        "project": {
+            "description": "Sistema multiplataforma para gestão de estoque da empresa Equilíbrio Natural"
+        }
+    },
+    "education": {
+        "title": "FORMAÇÃO",
+        "formation": {
+            "title": "Análise e Desenvolvimento de Sistemas",
+            "organization": "Escola Técnica Estadual - Etec",
+            "starDate": "Fev 2020",
+            "endDate": "Dez 2022"
+        }
+    },
+    "languages": {
+        "title": "IDIOMAS",
+        "language_3": {
+            "name": "Inglês",
+            "proficiencyLevel": "Fluente"
+        },
+        "language_2": {
+            "name": "Espanhol",
+            "proficiencyLevel": "Básico"
+        },
+        "language": {
+            "name": "Português",
+            "proficiencyLevel": "Nativo"
+        }
+    }
+}

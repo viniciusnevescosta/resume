@@ -1,0 +1,94 @@
+{
+    "header": {
+        "navAriaLabel": "Contacts and social networks",
+        "emailAriaLabel": "Send Email",
+        "linkedinAriaLabel": "LinkedIn Profile",
+        "githubAriaLabel": "GitHub Profile"
+    },
+    "summary": {
+        "title": "PROFESSIONAL SUMMARY",
+        "summary": "I work with React and Vue to bring dynamic interfaces to life, navigate C# with DDD on the backend, and build scalable microservices on AWS. When not coding, you'll find me gaming, drinking coffee (or three), or diving into personal projects that mix code and curiosity."
+    },
+    "experience": {
+        "title": "PROFESSIONAL EXPERIENCE",
+        "experience_3": {
+            "jobTitle": "Jr. Full Stack Developer",
+            "startDate": "Jan 2025",
+            "endDate": "Present",
+            "bullets": {
+                "firstBullet": "Develop internal system with microservices architecture in C# and React frontend",
+                "secondBullet": {
+                    "firstBullet": "Implement RPA for recruitment with AI candidate evaluator, integrating:",
+                    "subList": {
+                        "firstBullet": "Asynchronous resume processing",
+                        "secondBullet": "Technical compatibility analysis pipeline via custom LLM agents"
+                    }
+                }
+            }
+        },
+        "experience_2": {
+            "jobTitle": "Jr. Infrastructure Analyst",
+            "startDate": "Jan 2024",
+            "endDate": "Dec 2024",
+            "bullets": {
+                "firstBullet": "Processed 50K+ time records via Node.js/MongoDB ETL, feeding KPIs",
+                "secondBullet": "Migrated fully to AWS EC2 with Docker, reducing infrastructure costs by R$ 60k/year versus previous on-premise solution",
+                "thirdBullet": "Configured 10+ CI/CD pipelines in Azure DevOps for automated Docker container deployment"
+            }
+        },
+        "experience": {
+            "jobTitle": "IT Assistant",
+            "startDate": "Mar 2023",
+            "endDate": "Dec 2023",
+            "bullets": {
+                "firstBullet": "Managed inventory of 300+ IT assets for 200+ users",
+                "secondBullet": "Resolved technical tickets with 92% first-line resolution rate",
+                "thirdBullet": "Implemented Microsoft 365 security policies, reducing incidents by 65%"
+            }
+        }
+    },
+    "hardSkills": {
+        "title": "TECHNOLOGIES",
+        "database": "Databases"
+    },
+    "certifications": {
+        "title": "CERTIFICATIONS",
+        "actionLink": "View verifiable credential",
+        "actionTitle": "Certification"
+    },
+    "projects": {
+        "title": "FEATURED PROJECTS",
+        "actionLink": "View technical details",
+        "actionTitle": "Repository",
+        "project_2": {
+            "description": "CLI tool that simplifies creating semantic commits and branches"
+        },
+        "project": {
+            "description": "Cross-platform inventory management system for Equilíbrio Natural"
+        }
+    },
+    "education": {
+        "title": "EDUCATION",
+        "formation": {
+            "title": "Systems Analysis and Development",
+            "organization": "Escola Técnica Estadual - Etec",
+            "starDate": "Feb 2020",
+            "endDate": "Dec 2022"
+        }
+    },
+    "languages": {
+        "title": "LANGUAGES",
+        "language_3": {
+            "name": "English",
+            "proficiencyLevel": "Fluent"
+        },
+        "language_2": {
+            "name": "Spanish",
+            "proficiencyLevel": "Basic"
+        },
+        "language": {
+            "name": "Portuguese",
+            "proficiencyLevel": "Native"
+        }
+    }
+}
