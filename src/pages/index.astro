@@ -1,41 +1,42 @@
 ---
 // @ts-nocheck
-const supportedLocales = ['en', 'es', 'pt'];
+const supportedLocales = ['en', 'es', 'pt']
 ---
 
 <html lang="en">
-<head>
-  <title>Redirecting...</title>
-  <script is:inline>
-    (function() {
-      try {
-        const savedLocale = localStorage.getItem('preferredLocale');
-        const browserLang = navigator.language.split('-')[0];
-        
-        if (savedLocale && supportedLocales.includes(savedLocale)) {
-          window.location.href = `/${savedLocale}/`;
-          return;
-        }
+    <head>
+        <title>Redirecting...</title>
+        <script is:inline>
+            ;(function () {
+                try {
+                    const savedLocale = localStorage.getItem('preferredLocale')
+                    const browserLang = navigator.language.split('-')[0]
 
-        const targetLocale = supportedLocales.includes(browserLang) 
-          ? browserLang 
-          : 'en';
+                    if (savedLocale && supportedLocales.includes(savedLocale)) {
+                        window.location.href = `/${savedLocale}/`
+                        return
+                    }
 
-        window.location.href = `/${targetLocale}/`;
-        
-      } catch (e) {
-        window.location.href = '/en/';
-      }
-    })();
-  </script>
-  <meta http-equiv="refresh" content="0;url=/en/" />
-</head>
-<body>
-  <noscript>
-    <div style="padding: 2rem; text-align: center; font-family: sans-serif;">
-      <h1>Redirecting to English version...</h1>
-      <p>Please enable JavaScript or click <a href="/en/">here</a></p>
-    </div>
-  </noscript>
-</body>
+                    const targetLocale = supportedLocales.includes(browserLang)
+                        ? browserLang
+                        : 'en'
+
+                    window.location.href = `/${targetLocale}/`
+                } catch (e) {
+                    window.location.href = '/en/'
+                }
+            })()
+        </script>
+        <meta http-equiv="refresh" content="0;url=/en/" />
+    </head>
+    <body>
+        <noscript>
+            <div
+                style="padding: 2rem; text-align: center; font-family: sans-serif;"
+            >
+                <h1>Redirecting to English version...</h1>
+                <p>Please enable JavaScript or click <a href="/en/">here</a></p>
+            </div>
+        </noscript>
+    </body>
 </html>
