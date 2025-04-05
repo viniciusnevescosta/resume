@@ -23,6 +23,7 @@ const supportedLocales = ['en', 'es', 'pt']
 
                     window.location.href = `/${targetLocale}/`
                 } catch (e) {
+                    localStorage.setItem('language', '/en/')
                     window.location.href = '/en/'
                 }
             })()
@@ -34,7 +35,7 @@ const supportedLocales = ['en', 'es', 'pt']
             <div
                 style="padding: 2rem; text-align: center; font-family: sans-serif;"
             >
-                <h1>Redirecting to English version...</h1>
+                <h1>Redirecting to correct language version...</h1>
                 <p>Please enable JavaScript or click <a href="/en/">here</a></p>
             </div>
         </noscript>
