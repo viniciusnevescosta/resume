@@ -9,7 +9,7 @@ const supportedLocales = ['en', 'es', 'pt']
         <script is:inline>
             ;(function () {
                 try {
-                    const savedLocale = localStorage.getItem('preferredLocale')
+                    const savedLocale = localStorage.getItem('language')
                     const browserLang = navigator.language.split('-')[0]
 
                     if (savedLocale && supportedLocales.includes(savedLocale)) {
