@@ -40,19 +40,19 @@ export const useTheme = () => {
         setThemeState(newTheme)
     }
 
-    const toggleTheme = () => {
-        setThemeState((prev) => {
-            const newTheme =
-                prev === 'light'
-                    ? 'dark'
-                    : prev === 'dark'
-                      ? 'system-theme'
-                      : 'light'
+    // const toggleTheme = () => {
+    //     setThemeState((prev) => {
+    //         const newTheme =
+    //             prev === 'light'
+    //                 ? 'dark'
+    //                 : prev === 'dark'
+    //                   ? 'system-theme'
+    //                   : 'light'
 
-            localStorage.setItem('theme', newTheme)
-            return newTheme
-        })
-    }
+    //         localStorage.setItem('theme', newTheme)
+    //         return newTheme
+    //     })
+    // }
 
     useEffect(() => {
         const effective = getEffectiveTheme(theme)

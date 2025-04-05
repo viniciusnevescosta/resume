@@ -9,7 +9,7 @@ const getSavedLanguage = (): Language | null => {
 }
 
 export const useLanguage = () => {
-    const [language, setLanguage] = useState<Language>(() => {
+    const [language] = useState<Language>(() => {
         const urlLang = window.location.pathname.split('/')[1] as Language
         if (['pt', 'es', 'en'].includes(urlLang)) return urlLang
 
