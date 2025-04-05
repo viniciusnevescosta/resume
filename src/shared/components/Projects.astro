@@ -1,0 +1,55 @@
+---
+import type { Projects } from '../interfaces/IProjects'
+
+const { content } = Astro.props as Projects
+---
+
+<section>
+    <h2>{content.title}</h2>
+    <ul>
+        <li itemscope itemtype="http://schema.org/CreativeWork">
+            <strong itemprop="name">CommitFlow</strong>
+            <p>
+                {content.project_2.description}
+            </p>
+            <meta
+                itemprop="description"
+                content={content.project_2.description}
+            />
+            <link
+                itemprop="url"
+                href="https://github.com/viniciusnevescosta/CommitFlow"
+            />
+            <a
+                href="https://github.com/viniciusnevescosta/CommitFlow"
+                target="_blank"
+                rel="noreferrer"
+                title={content.actionTitle}
+            >
+                {content.actionLink}
+            </a>
+        </li>
+        <li itemscope itemtype="http://schema.org/CreativeWork">
+            <strong itemprop="name">Equilíbrio Natural - ERP</strong>
+            <p>
+                {content.project.description}
+            </p>
+            <meta
+                itemprop="description"
+                content={content.project.description}
+            />
+            <link
+                itemprop="url"
+                href="https://github.com/FrogDevs/etec-final-course-project"
+            />
+            <a
+                href="https://github.com/FrogDevs/etec-final-course-project"
+                target="_blank"
+                rel="noreferrer"
+                title={content.actionTitle}
+            >
+                {content.actionLink}
+            </a>
+        </li>
+    </ul>
+</section>

@@ -1,0 +1,27 @@
+---
+import Layout from '../../shared/layouts/es/Layout.astro'
+import Header from '../../shared/components/Header.astro'
+import Summary from '../../shared/components/Summary.astro'
+import Experience from '../../shared/components/Experience.astro'
+import HardSkills from '../../shared/components/HardSkills.astro'
+import Certifications from '../../shared/components/Certifications.astro'
+import Projects from '../../shared/components/Projects.astro'
+import Education from '../../shared/components/Education.astro'
+import Languages from '../../shared/components/Languages.astro'
+import content from '../../locales/es/translations.json'
+import { App } from '../../react/App'
+---
+
+<Layout>
+    <Header content={content.header} />
+    <main>
+        <Summary content={content.summary} />
+        <Experience content={content.experience} />
+        <HardSkills content={content.hardSkills} />
+        <Certifications content={content.certifications} />
+        <Projects content={content.projects} />
+        <Education content={content.education} />
+        <Languages content={content.languages} />
+    </main>
+    <App client:only="react" />
+</Layout>

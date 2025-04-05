@@ -17,31 +17,33 @@ My minimalist, responsive curriculum vitae with multi-language support and moder
 
 ## Stack Overview
 
-- **Languages**:
-  <br>
-  ![REACTJS](https://img.shields.io/badge/-React-3178C6?logo=react&logoColor=white)
-  ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white)
-  ![CSS3](https://img.shields.io/badge/-CSS3-646CFF?logo=css3&logoColor=white)
-  ![Python](https://img.shields.io/badge/-Python-3178C6?logo=python&logoColor=white)
+- **Languages**:  
+  [![Astro](https://img.shields.io/badge/Astro-BC52EE?logo=astro&logoColor=fff)](#)
+  [![React](https://img.shields.io/badge/React-%2320232a.svg?logo=react&logoColor=%2361DAFB)](#)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff)](#)
+  [![CSS](https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=fff)](#)
 
 - **Tooling**:  
-  ![Vite](https://img.shields.io/badge/-Vite-646CFF?logo=vite&logoColor=white)
-  ![Biome](https://img.shields.io/badge/-Biome-000?logo=biome&logoColor=white)
+  [![pnpm](https://img.shields.io/badge/pnpm-F69220?logo=pnpm&logoColor=fff)](#)
+  [![prettier](https://img.shields.io/badge/Prettier-ff69b4?logo=prettier&logoColor=fff)](#)
+  [![ESLint](https://img.shields.io/badge/ESLint-4B3263?logo=eslint&logoColor=white)](#)
 
 ## Quick Start
 
-1. Clone repo:  
+1. Clone repo:
+
 ```bash
 git clone https://github.com/yourusername/viniciusnevescosta.github.io.git
 cd viniciusnevescosta.github.io
 ```
 
-2. Start dev:  
+2. Start dev:
+
 ```bash
 pnpm dev
 ```
 
-### Language Management
+<!-- ### Language Management
 
 Edit JSON files in /src/locales/:
 
@@ -49,32 +51,34 @@ Edit JSON files in /src/locales/:
 ├─ en.json  # English
 ├─ es.json  # Spanish
 └─ pt.json  # Portuguese
-```
+``` -->
 
 ### Theme Customization
 
-Modify CSS variables in src/styles/base/_variables.css:
+Modify CSS variables in src/styles/utils/\_variables.css:
+
 ```css
 :root {
-	--text-color: rgb(16, 15, 15);
-	--text2-color: rgb(111, 110, 105);
-  /* ... */
+    --text-color: rgb(16, 15, 15);
+    --text2-color: rgb(111, 110, 105);
+    /* ... */
 }
 ```
 
-### Deployment Setup
+<!-- ### Deployment Setup
 
-3. Deploy:  
+3. Deploy:
+
 ```bash
 git checkout main
-pnpm github
+pnpm gh-pages
 ```
 
 The deployment script will:
 
 1. Generate production build in ./dist
 2. Create gh-pages branch with optimized assets
-3. Push branch to GitHub
+3. Push branch to GitHub -->
 
 #### ⚠️ Required Configuration:
 

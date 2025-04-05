@@ -1,0 +1,82 @@
+---
+import type { Experience } from '../interfaces/IExperience'
+
+const { content } = Astro.props as Experience
+---
+
+<section>
+    <h2>{content.title}</h2>
+    <article itemscope itemtype="http://schema.org/Organization">
+        <h3>
+            <span itemprop="jobTitle">{content.experience_3.jobTitle}</span>
+            <span aria-hidden="true"> | </span>
+            <span itemprop="name">MTP Brasil</span>
+        </h3>
+        <p class="period">
+            <time itemprop="startDate" datetime="2025-01"
+                >{content.experience_3.startDate}</time
+            >{' '}
+            - <time itemprop="endDate">{content.experience_3.endDate}</time>
+        </p>
+        <ul>
+            <li>{content.experience_3.bullets.firstBullet}</li>
+            <li>
+                {content.experience_3.bullets.secondBullet.firstBullet}
+                <ul class="sub-list">
+                    <li>
+                        {
+                            content.experience_3.bullets.secondBullet.subList
+                                .firstBullet
+                        }
+                    </li>
+                    <li>
+                        {
+                            content.experience_3.bullets.secondBullet.subList
+                                .secondBullet
+                        }
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </article>
+    <article itemscope itemtype="http://schema.org/Organization">
+        <h3>
+            <span itemprop="jobTitle">{content.experience_2.jobTitle}</span>
+            <span aria-hidden="true"> | </span>
+            <span itemprop="name">MTP Brasil</span>
+        </h3>
+        <p class="period">
+            <time itemprop="startDate" datetime="2024-01"
+                >{content.experience_2.startDate}</time
+            >{' '}
+            - <time itemprop="endDate" datetime="2024-12"
+                >{content.experience_2.endDate}</time
+            >
+        </p>
+        <ul>
+            <li>{content.experience_2.bullets.firstBullet}</li>
+            <li>{content.experience_2.bullets.secondBullet}</li>
+            <li>{content.experience_2.bullets.thirdBullet}</li>
+        </ul>
+    </article>
+    <article itemscope itemtype="http://schema.org/Organization">
+        <h3>
+            <span itemprop="jobTitle">{content.experience.jobTitle}</span>
+            <span aria-hidden="true"> | </span>
+            <span itemprop="name">MTP Brasil</span>
+        </h3>
+        <p class="period">
+            <time itemprop="startDate" datetime="2023-03"
+                >{content.experience.startDate}</time
+            >{' '}
+            - <time itemprop="endDate" datetime="2023-12"
+                >{content.experience.endDate}</time
+            >
+        </p>
+        <ul>
+            <li>{content.experience.bullets.firstBullet}</li>
+            <li>{content.experience.bullets.secondBullet}</li>
+            <li>{content.experience.bullets.thirdBullet}</li>
+        </ul>
+    </article>
+</section>

@@ -1,0 +1,10 @@
+@import './base/_reset';
+@import './base/_typography';
+@import './components/_bottomBar';
+@import './components/_header';
+@import './components/_modal';
+@import './components/_optionsMenu';
+@import './components/_skills';
+@import './sections/_main-content';
+@import './utils/_variables.css';
+@import 'remixicon/fonts/remixicon';
