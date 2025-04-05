@@ -78,7 +78,6 @@ export const useTheme = () => {
     return {
         theme,
         effectiveTheme,
-        setTheme,
-        toggleTheme
+        setTheme
     }
 }

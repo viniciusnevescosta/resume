@@ -1,63 +1,65 @@
-import React from 'react'
-import { useState } from 'react'
+import * as React from 'react'
 import { BottomBar } from './components/BottomBar'
 import { OptionsMenu } from './components/Menu'
 import { OptionsModal } from './components/Modal'
 import { useTheme } from './hooks/useTheme'
 import { useLanguage } from './hooks/useLang'
+import { I18nProvider, useI18n } from './context/I18nContext'
 
-export const App = () => {
-    type ModalType = 'theme' | 'lang'
-    const [activeModal, setActiveModal] = useState<{
+type ModalType = 'theme' | 'lang'
+
+const AppContent = () => {
+    const [activeModal, setActiveModal] = React.useState<{
         type: ModalType | null
         isOpen: boolean
     }>({ type: null, isOpen: false })
 
     const { theme, effectiveTheme, setTheme } = useTheme()
     const { language, setLanguage } = useLanguage()
+    const i18n = useI18n()
 
     const modalConfigs = {
         theme: {
-            title: 'Selecionar tema',
+            title: i18n.modal.theme.title,
             options: [
                 {
                     id: 'system-theme',
-                    value: 'Sistema',
+                    value: i18n.modal.theme.systemTheme,
                     checked: theme === 'system-theme',
                     onClick: () => setTheme('system-theme')
                 },
                 {
                     id: 'light',
-                    value: 'Claro',
+                    value: i18n.modal.theme.light,
                     checked: theme === 'light',
                     onClick: () => setTheme('light')
                 },
                 {
                     id: 'dark',
-                    value: 'Escuro',
+                    value: i18n.modal.theme.dark,
                     checked: theme === 'dark',
                     onClick: () => setTheme('dark')
                 }
             ]
         },
         lang: {
-            title: 'Selecionar idioma',
+            title: i18n.modal.lang.title,
             options: [
                 {
                     id: 'en',
-                    value: 'Inglês',
+                    value: i18n.modal.lang.en,
                     checked: language === 'en',
                     onClick: () => setLanguage('en')
                 },
                 {
                     id: 'es',
-                    value: 'Espanhol',
+                    value: i18n.modal.lang.es,
                     checked: language === 'es',
                     onClick: () => setLanguage('es')
                 },
                 {
                     id: 'pt',
-                    value: 'Português',
+                    value: i18n.modal.lang.pt,
                     checked: language === 'pt',
                     onClick: () => setLanguage('pt')
                 }
@@ -90,5 +92,13 @@ export const App = () => {
                 />
             )}
         </>
+    )
+}
+
+export const App = () => {
+    return (
+        <I18nProvider>
+            <AppContent />
+        </I18nProvider>
     )
 }

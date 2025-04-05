@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useState } from 'react'
+import * as React from 'react'
 import type { OptionsModalProps } from '../interfaces/IOptionsModalProps'
+import { useI18n } from '../context/I18nContext'
 
 export const OptionsModal = ({
     modalTitle,
@@ -7,14 +8,15 @@ export const OptionsModal = ({
     isOpen,
     onClose
 }: OptionsModalProps & { onClose: () => void }) => {
-    const [visibility, setVisibility] = useState(isOpen)
+    const [visibility, setVisibility] = React.useState(isOpen)
+    const i18n = useI18n()
 
-    const handleClose = useCallback(() => {
+    const handleClose = React.useCallback(() => {
         setVisibility(false)
         onClose()
     }, [onClose])
 
-    const closeModal = useCallback(
+    const closeModal = React.useCallback(
         (e: KeyboardEvent) => {
             if (e.key === 'Escape') {
                 handleClose()
@@ -23,20 +25,22 @@ export const OptionsModal = ({
         [handleClose]
     )
 
-    useEffect(() => {
+    React.useEffect(() => {
         setVisibility(isOpen)
     }, [isOpen])
 
-    useEffect(() => {
+    React.useEffect(() => {
         if (isOpen === false) {
             handleClose()
         }
     }, [isOpen, handleClose])
 
-    useEffect(() => {
-        visibility === true
-            ? document.addEventListener('keydown', closeModal)
-            : document.removeEventListener('keydown', closeModal)
+    React.useEffect(() => {
+        if (visibility) {
+            document.addEventListener('keydown', closeModal)
+        } else {
+            document.removeEventListener('keydown', closeModal)
+        }
 
         return () => {
             document.removeEventListener('keydown', closeModal)
@@ -65,7 +69,7 @@ export const OptionsModal = ({
                         <i
                             id="close_modal"
                             className="icon ri-close-line ri-xl"
-                            title="Fechar"
+                            title={i18n.modal.closeMessage}
                             role="button"
                             tabIndex={0}
                             onClick={handleClose}
@@ -77,9 +81,12 @@ export const OptionsModal = ({
                         <div className="popup-options">
                             <form>{radioGroup}</form>
                         </div>
-                        <p className="popup-exit">
-                            Pressione <kbd>ESC</kbd> para fechar
-                        </p>
+                        <p
+                            className="popup-exit"
+                            dangerouslySetInnerHTML={{
+                                __html: i18n.modal.kbdMessage
+                            }}
+                        />
                     </div>
                     <div
                         className="container-background"
