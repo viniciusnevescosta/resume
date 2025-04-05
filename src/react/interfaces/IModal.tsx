@@ -5,7 +5,7 @@ interface ModalConfig {
     onClick?: () => void
 }
 
-export interface OptionsModalProps {
+export interface IModal {
     modalTitle: string
     modalOptions: ModalConfig[]
     isOpen: boolean

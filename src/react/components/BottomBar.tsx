@@ -1,10 +1,9 @@
-import * as React from 'react'
-import type { optionsMenuProps } from '../interfaces/IOptionsMenuProps'
+import type { IMenu } from '../interfaces/IMenu'
 import { useI18n } from '../context/I18nContext'
 
 type modalType = 'theme' | 'lang'
 
-export const BottomBar = ({ onClickModal, Theme }: optionsMenuProps) => {
+export const BottomBar = ({ onClickModal, Theme }: IMenu) => {
     const i18n = useI18n()
 
     const handleKeyPress = (event: React.KeyboardEvent, type: modalType) => {

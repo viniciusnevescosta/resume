@@ -1,5 +1,5 @@
 import * as React from 'react'
-import type { OptionsModalProps } from '../interfaces/IOptionsModalProps'
+import type { IModal } from '../interfaces/IModal'
 import { useI18n } from '../context/I18nContext'
 
 export const OptionsModal = ({
@@ -7,7 +7,7 @@ export const OptionsModal = ({
     modalOptions,
     isOpen,
     onClose
-}: OptionsModalProps & { onClose: () => void }) => {
+}: IModal & { onClose: () => void }) => {
     const [visibility, setVisibility] = React.useState(isOpen)
     const i18n = useI18n()
 
