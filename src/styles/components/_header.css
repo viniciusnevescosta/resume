@@ -1,5 +1,5 @@
 header {
-    margin-bottom: 2rem;
+    margin-bottom: calc(var(--section-spacing) * 0.75);
     text-align: center;
 }
 
@@ -18,8 +18,4 @@ header {
     align-items: center;
     gap: 0.25rem;
     transition: opacity 0.3s;
-}
-
-.contact-info a:hover {
-    opacity: 0.8;
 }
