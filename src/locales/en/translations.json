@@ -60,6 +60,9 @@
         "title": "FEATURED PROJECTS",
         "actionLink": "View technical details",
         "actionTitle": "Repository",
+        "project_3": {
+            "description": "CLI tool to manage multiple Docker/Podman containers in parallel"
+        },
         "project_2": {
             "description": "CLI tool that simplifies creating semantic commits and branches"
         },

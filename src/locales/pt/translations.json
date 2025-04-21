@@ -60,6 +60,9 @@
         "title": "PROJETOS DESTACADOS",
         "actionLink": "Ver detalhes técnicos",
         "actionTitle": "Repositório",
+        "project_3": {
+            "description": "Ferramenta CLI para gerenciar vários contêineres Docker/Podman em paralelo"
+        },
         "project_2": {
             "description": "Ferramenta CLI que simplifica a criação de commits e branches semânticos"
         },

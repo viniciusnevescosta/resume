@@ -1,34 +1,32 @@
 :root {
-    --text-color: rgb(16, 15, 15);
-    --text2-color: rgb(111, 110, 105);
-    --bg-color: rgb(255, 255, 255);
-    --bg2-color: rgb(245, 246, 250);
-    --skill-border: rgb(230, 228, 217);
-    --icon-hover-bg: rgb(245, 246, 250);
-    --icon-active-bg: rgb(237, 238, 241);
-    --bg-select: rgb(225, 236, 235);
+    --text-color: oklch(14.5% 0 0);
+    --bg-color: oklch(98.5% 0 0);
+    --bg2-color: oklch(97% 0 0);
+    --skill-border: oklch(92.2% 0 0);
+    --icon-hover-bg: oklch(95.5% 0 0);
+    --bg-select: oklch(97% 0.014 254.604);
+    
+    --base-line-height: 1.6;
+    --header-line-height: 1.3;
+    --section-spacing: 1.25rem;
 }
 
 [data-theme='dark'] {
-    --text-color: rgb(206, 205, 195);
-    --text2-color: rgb(135, 133, 128);
-    --bg-color: rgb(16, 15, 15);
-    --bg2-color: rgb(28, 27, 26);
-    --skill-border: rgb(40, 39, 38);
-    --icon-hover-bg: rgb(28, 27, 26);
-    --icon-active-bg: rgb(40, 39, 38);
-    --bg-select: rgb(18, 47, 44);
+    --text-color: oklch(98.5% 0 0);
+    --bg-color: oklch(14.5% 0 0);
+    --bg2-color: oklch(20.5% 0 0);
+    --skill-border: oklch(26.9% 0 0);
+    --icon-hover-bg: oklch(26.9% 0 0);
+    --bg-select: oklch(29.3% 0.066 243.157);
 }
 
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme]) {
-        --text-color: rgb(206, 205, 195);
-        --text2-color: rgb(135, 133, 128);
-        --bg-color: rgb(16, 15, 15);
-        --bg2-color: rgb(28, 27, 26);
-        --skill-border: rgb(40, 39, 38);
-        --icon-hover-bg: rgb(28, 27, 26);
-        --icon-active-bg: rgb(40, 39, 38);
-        --bg-select: rgb(18, 47, 44);
+        --text-color: oklch(98.5% 0 0);
+        --bg-color: oklch(14.5% 0 0);
+        --bg2-color: oklch(20.5% 0 0);
+        --skill-border: oklch(26.9% 0 0);
+        --icon-hover-bg: oklch(26.9% 0 0);
+        --bg-select: oklch(29.3% 0.066 243.157);
     }
 }

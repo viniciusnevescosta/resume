@@ -1,3 +1,8 @@
+section {
+    margin-bottom: calc(var(--section-spacing) * 0.75);
+    padding: 0.75rem 0;
+}
+
 ul {
     list-style-type: none;
 }
