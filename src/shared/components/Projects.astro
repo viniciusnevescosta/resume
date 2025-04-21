@@ -8,6 +8,28 @@ const { content } = Astro.props as Projects
     <h2>{content.title}</h2>
     <ul>
         <li itemscope itemtype="http://schema.org/CreativeWork">
+            <strong itemprop="name">ContainerFlow</strong>
+            <p>
+                {content.project_3.description}
+            </p>
+            <meta
+                itemprop="description"
+                content={content.project_3.description}
+            />
+            <link
+                itemprop="url"
+                href="https://github.com/viniciusnevescosta/ContainerFlow"
+            />
+            <a
+                href="https://github.com/viniciusnevescosta/ContainerFlow"
+                target="_blank"
+                rel="noreferrer"
+                title={content.actionTitle}
+            >
+                {content.actionLink}
+            </a>
+        </li>
+        <li itemscope itemtype="http://schema.org/CreativeWork">
             <strong itemprop="name">CommitFlow</strong>
             <p>
                 {content.project_2.description}

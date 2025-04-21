@@ -3,6 +3,9 @@ export interface Projects {
         title: string
         actionLink: string
         actionTitle: string
+        project_3: {
+            description: string
+        }
         project_2: {
             description: string
         }
