@@ -43,15 +43,15 @@ cd viniciusnevescosta.github.io
 pnpm dev
 ```
 
-<!-- ### Language Management
+### Locale Management
 
 Edit JSON files in /src/locales/:
 
 ```
-├─ en.json  # English
-├─ es.json  # Spanish
-└─ pt.json  # Portuguese
-``` -->
+├─ en/translations.json  # English
+├─ es/translations.json  # Spanish
+└─ pt/translations.json  # Portuguese
+```
 
 ### Theme Customization
 
@@ -65,21 +65,6 @@ Modify CSS variables in src/styles/utils/\_variables.css:
 }
 ```
 
-<!-- ### Deployment Setup
-
-3. Deploy:
-
-```bash
-git checkout main
-pnpm gh-pages
-```
-
-The deployment script will:
-
-1. Generate production build in ./dist
-2. Create gh-pages branch with optimized assets
-3. Push branch to GitHub -->
-
 #### ⚠️ Required Configuration:
 
 1. Enable GitHub Pages for gh-pages branch:
@@ -88,10 +73,10 @@ The deployment script will:
 ## Attributions
 
 - **Flexoki Color Scheme:**
-Base theme colors adapted from [Flexoki](https://github.com/kepano/flexoki) by [Steph Ango](https://stephango.com/) (MIT License)
+  Base theme colors adapted from [Flexoki](https://github.com/kepano/flexoki) by [Steph Ango](https://stephango.com/) (MIT License)
 
 - **Remix Icons:**
-Interface icons provided by [Remix Icon](https://remixicon.com/) (Apache-2.0 license)
+  Interface icons provided by [Remix Icon](https://remixicon.com/) (Apache-2.0 license)
 
 ## License
 
