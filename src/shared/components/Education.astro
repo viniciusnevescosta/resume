@@ -6,6 +6,14 @@ const { content } = Astro.props as Education
 
 <section>
     <h2>{content.title}</h2>
+    <p class="period">
+        <time itemprop="startDate" datetime="2020-02">
+            {content.formation.starDate}
+        </time>{' '}
+        - <time itemprop="endDate" datetime="2022-12"
+            >{content.formation.endDate}</time
+        >
+    </p>
     <ul>
         <li itemscope itemtype="http://schema.org/EducationalEvent">
             <span itemprop="name">
@@ -17,14 +25,6 @@ const { content } = Astro.props as Education
                 itemtype="http://schema.org/EducationalOrganization"
             >
                 <span itemprop="name">{content.formation.organization}</span>
-                <p class="period">
-                    <time itemprop="startDate" datetime="2020-02">
-                        {content.formation.starDate}
-                    </time>{' '}
-                    - <time itemprop="endDate" datetime="2022-12"
-                        >{content.formation.endDate}</time
-                    >
-                </p>
             </div>
         </li>
     </ul>
