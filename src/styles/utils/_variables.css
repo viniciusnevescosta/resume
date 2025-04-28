@@ -12,7 +12,7 @@
 }
 
 [data-theme='dark'] {
-    --text-color: oklch(98.5% 0 0);
+    --text-color: oklch(92.2% 0 0);
     --bg-color: oklch(14.5% 0 0);
     --bg2-color: oklch(20.5% 0 0);
     --skill-border: oklch(26.9% 0 0);
@@ -22,7 +22,7 @@
 
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme]) {
-        --text-color: oklch(98.5% 0 0);
+        --text-color: oklch(92.2% 0 0);
         --bg-color: oklch(14.5% 0 0);
         --bg2-color: oklch(20.5% 0 0);
         --skill-border: oklch(26.9% 0 0);
