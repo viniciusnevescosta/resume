@@ -1,6 +1,6 @@
 # Vinícius Costa - Resume
 
-[![Live Demo](https://img.shields.io/badge/%F0%9F%9A%80-Live%20Demo-2EA44F)](https://viniciusnevescosta.github.io)
+[![Live Demo](https://img.shields.io/badge/%F0%9F%9A%80-Live%20Demo-2EA44F)](https://resume.viniciusnevescosta.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 My minimalist, responsive curriculum vitae with multi-language support and modern web practices.
