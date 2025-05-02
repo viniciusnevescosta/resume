@@ -1,0 +1,7 @@
+- Fix Astro i18N
+- Add Astro view transitions
+- Work in 404 page
+- Add react tests
+- Add Notification component
+- Add react-pdf feature
+- Add astro typography
