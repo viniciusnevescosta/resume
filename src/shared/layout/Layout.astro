@@ -1,9 +1,11 @@
 ---
-import '../../../styles/main.css'
+import '../../styles/main.css'
+import type { Layout } from '../interfaces/ILayout'
+const { content } = Astro.props as Layout
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={content.lang}>
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,24 +15,12 @@ import '../../../styles/main.css'
             content="fNDAJqCnHfz2iT5ZJnrozHcGBkeo67vlPERdkLTx_B8"
         />
         <meta name="robots" content="index, follow" />
-        <title>Vinícius Neves Costa | Resume</title>
-        <meta
-            name="description"
-            content="Full-Stack Developer with 3+ years building scalable systems in C#, React and AWS. Specialist in AI/LLM automation, cloud migration (saved R$60k/year) and CI/CD. AWS Certified."
-        />
-        <meta
-            name="keywords"
-            content="Full-Stack Developer, React, Vue.js, AWS, C#, Microservices, Docker, CI/CD, AI Automation, LLM, RPA, CLI Tools, Cloud Computing, Azure DevOps, Node.js, MongoDB, AWS Certification"
-        />
+        <title>{content.title}</title>
+        <meta name="description" content={content.description} />
+        <meta name="keywords" content={content.keywords} />
         <meta name="author" content="Vinícius Neves Costa" />
-        <meta
-            property="og:title"
-            content="Vinícius Neves Costa | Full-Stack Developer C#/React/AWS"
-        />
-        <meta
-            property="og:description"
-            content="Full-Stack Developer with 3+ years building scalable systems in C#, React and AWS. Specialist in AI/LLM automation..."
-        />
+        <meta property="og:title" content={content.og_title} />
+        <meta property="og:description" content={content.description} />
         <meta
             property="og:url"
             content="https://resume.viniciusnevescosta.com"

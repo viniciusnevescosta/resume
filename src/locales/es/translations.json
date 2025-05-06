@@ -1,18 +1,26 @@
 {
+    "layout": {
+      "lang": "es",
+      "title": "Vinícius Neves Costa | Currículo",
+      "description": "Desarrollador Full-Stack con 3+ años construyendo sistemas escalables en C#, React y AWS. Especialista en automatización con IA/LLM, migración a la nube (ahorro de R$60k/año) y CI/CD. Certificado en AWS.",
+      "keywords": "Desarrollador Full-Stack, React, Vue.js, AWS, C#, Microservicios, Docker, CI/CD, Automatización con IA, LLM, RPA, Herramientas CLI, Cloud Computing, Azure DevOps, Node.js, MongoDB, Certificación AWS",
+      "og_title": "Vinícius Neves Costa | Desarrollador Full-Stack C#/React/AWS",
+      "og_description": "Desarrollador Full-Stack con 3+ años construyendo sistemas escalables en C#, React y AWS. Especialista en automatización con IA/LLM..."
+    },
     "header": {
         "navAriaLabel": "Contactos y redes sociales",
         "emailAriaLabel": "Enviar correo electrónico",
-        "linkedinAriaLabel": "Perfil de LinkedIn",
-        "githubAriaLabel": "Perfil de GitHub"
+        "linkedinAriaLabel": "Perfil en LinkedIn",
+        "githubAriaLabel": "Perfil en GitHub"
     },
     "summary": {
         "title": "RESUMEN PROFESIONAL",
-        "summary": "Desarrollador Full-Stack con experiencia en React/Vue y arquitecturas en la nube (AWS). Apasionado por resolver problemas complejos con C# y microservicios, así como por explorar la automatización inteligente con IA/LLM. En mis proyectos personales, creo herramientas CLI para optimizar los flujos de trabajo."
+        "summary": "Desarrollador Full-Stack con experiencia en React/Vue y arquitecturas en la nube (AWS). Apasionado por resolver problemas complejos con C# y microservicios, además de explorar automatización inteligente con IA/LLM. En mis proyectos personales, creo herramientas CLI para optimizar flujos de trabajo."
     },
     "experience": {
         "title": "EXPERIENCIA PROFESIONAL",
         "experience_3": {
-            "jobTitle": "Desarrollador Web Full Stack Jr.",
+            "jobTitle": "Desarrollador Web Full-Stack Jr.",
             "startDate": "Ene 2025",
             "endDate": "Presente",
             "bullets": {
@@ -20,19 +28,19 @@
                 "secondBullet": {
                     "firstBullet": "Implemento RPA para reclutamiento con IA evaluadora de candidatos, integrando:",
                     "subList": {
-                        "firstBullet": "Procesamiento asincrónico de currículos",
+                        "firstBullet": "Procesamiento asíncrono de currículos",
                         "secondBullet": "Pipeline de análisis de compatibilidad técnica mediante agentes LLM personalizados"
                     }
                 }
             }
         },
         "experience_2": {
-            "jobTitle": "Analista de Infraestructura Jr.",
+            "jobTitle": "Analista de Infra Jr.",
             "startDate": "Ene 2024",
             "endDate": "Dic 2024",
             "bullets": {
-                "firstBullet": "Procesé 50K+ registros de tiempo mediante ETL Node.js/MongoDB, alimentando KPIs",
-                "secondBullet": "Migré totalmente a AWS EC2 con Docker, reduciendo costos de infraestructura en R$ 60k/año versus solución on-premise anterior",
+                "firstBullet": "Procesé 50K+ registros de asistencia mediante ETL Node.js/MongoDB, alimentando KPIs",
+                "secondBullet": "Realicé migración total a AWS EC2 con Docker, reduciendo costos de infraestructura en R$ 60k/año versus solución on-premise anterior",
                 "thirdBullet": "Configuré 10+ pipelines CI/CD en Azure DevOps para despliegue automático de contenedores Docker"
             }
         },
@@ -42,7 +50,7 @@
             "endDate": "Dic 2023",
             "bullets": {
                 "firstBullet": "Gestioné inventario de 300+ activos de TI para 200+ usuarios",
-                "secondBullet": "Atendí tickets técnicos con 92% de resolución en primera línea",
+                "secondBullet": "Atendí incidencias técnicas con promedio de 92% de resolución en primera línea",
                 "thirdBullet": "Implementé políticas de seguridad en Microsoft 365 reduciendo incidentes en 65%"
             }
         }
@@ -61,13 +69,13 @@
         "actionLink": "Ver detalles técnicos",
         "actionTitle": "Repositorio",
         "project_3": {
-            "description": "Herramienta CLI para administrar múltiples contenedores Docker/Podman en paralelo"
+            "description": "Herramienta CLI para gestionar múltiples contenedores Docker/Podman en paralelo"
         },
         "project_2": {
             "description": "Herramienta CLI que simplifica la creación de commits y branches semánticos"
         },
         "project": {
-            "description": "Sistema multiplataforma de gestión de inventario para Equilíbrio Natural"
+            "description": "Sistema multiplataforma para gestión de inventario de la empresa Equilibrio Natural"
         }
     },
     "education": {

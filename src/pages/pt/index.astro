@@ -1,5 +1,5 @@
 ---
-import Layout from '../../shared/layouts/pt/Layout.astro'
+import Layout from '../../shared/layout/Layout.astro'
 import Header from '../../shared/components/Header.astro'
 import Summary from '../../shared/components/Summary.astro'
 import Experience from '../../shared/components/Experience.astro'
@@ -12,7 +12,7 @@ import content from '../../locales/pt/translations.json'
 import { App } from '../../react/App'
 ---
 
-<Layout>
+<Layout content={content.layout}>
     <Header content={content.header} />
     <main>
         <Summary content={content.summary} />
