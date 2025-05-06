@@ -5,7 +5,7 @@ const { content } = Astro.props as Layout
 ---
 
 <!doctype html>
-<html lang="">
+<html lang={content.lang}>
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,24 +15,12 @@ const { content } = Astro.props as Layout
             content="fNDAJqCnHfz2iT5ZJnrozHcGBkeo67vlPERdkLTx_B8"
         />
         <meta name="robots" content="index, follow" />
-        <title>{content.title}</title> 
-        <meta
-            name="description"
-            content={content.description}
-        />
-        <meta
-            name="keywords"
-            content={content.keywords}
-        />
+        <title>{content.title}</title>
+        <meta name="description" content={content.description} />
+        <meta name="keywords" content={content.keywords} />
         <meta name="author" content="Vinícius Neves Costa" />
-        <meta
-            property="og:title"
-            content={content.og_title}
-        />
-        <meta
-            property="og:description"
-            content={content.description}
-        />
+        <meta property="og:title" content={content.og_title} />
+        <meta property="og:description" content={content.description} />
         <meta
             property="og:url"
             content="https://resume.viniciusnevescosta.com"
