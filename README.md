@@ -48,14 +48,14 @@ pnpm dev
 Edit JSON files in /src/locales/:
 
 ```
-├─ en/translations.json  # English
-├─ es/translations.json  # Spanish
-└─ pt/translations.json  # Portuguese
+├─ translations_en.json
+├─ translations_es.json
+└─ translations_pt.json
 ```
 
 ### Theme Customization
 
-Modify CSS variables in src/styles/utils/\_variables.css:
+Modify CSS variables in src/styles/utils/_variables.css:
 
 ```css
 :root {
