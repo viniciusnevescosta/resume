@@ -1,45 +1,10 @@
 ---
+import Layout from '../shared/layout/Layout.astro'
+import content from '../locales/en/translations.json'
 import '../styles/main.css'
 ---
 
-<script>
-    const storage = localStorage.getItem('theme')
-    console.log(storage)
-
-    // if light add to metatag
-</script>
-
-<html lang="pt">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-            name="google-site-verification"
-            content="fNDAJqCnHfz2iT5ZJnrozHcGBkeo67vlPERdkLTx_B8"
-        />
-        <meta
-            name="description"
-            content="Desenvolvedor Full Stack AWS Certified com experiência em arquiteturas cloud, automação ETL e desenvolvimento de sistemas escaláveis com Node.js e React"
-        />
-        <meta
-            name="keywords"
-            content="AWS Certified, Node.js Developer, React Specialist, Cloud Architecture, ETL Automation, DevOps"
-        />
-        <meta name="author" content="Vinícius Neves Costa" />
-        <meta
-            property="og:title"
-            content="Vinícius Neves Costa - Desenvolvedor Full Stack AWS Certified"
-        />
-        <meta
-            property="og:description"
-            content="Especialista em desenvolvimento de aplicações cloud-native e automação de processos com certificação AWS"
-        />
-        <meta
-            property="og:url"
-            content="https://viniciusnevescosta.github.io/"
-        />
-        <title>Vinícius Neves Costa - Currículo</title>
-    </head>
+<Layout content={content.layout}>
     <section>
         <div class="gif">
             <img
@@ -56,45 +21,43 @@ import '../styles/main.css'
             </div>
         </div>
     </section>
+</Layout>
 
-    <style>
-        section {
-            display: flex;
-            position: absolute;
-            justify-content: center;
-            align-items: center;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
+<style>
+    section {
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 
-        .gif {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 3rem;
-        }
+    .gif {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+    }
 
-        .gif div {
-            display: flex;
-            flex-direction: column;
-        }
+    .gif div {
+        display: flex;
+        flex-direction: column;
+    }
 
-        button {
-            background-color: transparent;
-            border: none;
-            text-align: start;
-            width: fit-content;
-            font-size: 15px;
-        }
+    button {
+        background-color: transparent;
+        border: none;
+        text-align: start;
+        width: fit-content;
+        font-size: 15px;
+    }
 
-        button:hover {
-            opacity: 0.8;
-            cursor: pointer;
-        }
-    </style>
-
-
-</html>
+    button:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+</style>
