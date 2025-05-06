@@ -1,9 +1,11 @@
 ---
-import '../../../styles/main.css'
+import '../../styles/main.css'
+import type { Layout } from '../interfaces/ILayout'
+const { content } = Astro.props as Layout
 ---
 
 <!doctype html>
-<html lang="pt">
+<html lang="">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,23 +15,23 @@ import '../../../styles/main.css'
             content="fNDAJqCnHfz2iT5ZJnrozHcGBkeo67vlPERdkLTx_B8"
         />
         <meta name="robots" content="index, follow" />
-        <title>Vinícius Neves Costa | Currículo</title>
+        <title>{content.title}</title> 
         <meta
             name="description"
-            content="Desenvolvedor Full-Stack com 3+ anos construindo sistemas escaláveis em C#, React e AWS. Especialista em automação com IA/LLM, migração para cloud (economia de R$60k/ano) e CI/CD. AWS Certified."
+            content={content.description}
         />
         <meta
             name="keywords"
-            content="Desenvolvedor Full-Stack, React, Vue.js, AWS, C#, Microsserviços, Docker, CI/CD, Automação com IA, LLM, RPA, CLI Tools, Cloud Computing, Azure DevOps, Node.js, MongoDB, Certificação AWS"
+            content={content.keywords}
         />
         <meta name="author" content="Vinícius Neves Costa" />
         <meta
             property="og:title"
-            content="Vinícius Neves Costa | Desenvolvedor Full-Stack C#/React/AWS"
+            content={content.og_title}
         />
         <meta
             property="og:description"
-            content="Desenvolvedor Full-Stack com 3+ anos construindo sistemas escaláveis em C#, React e AWS. Especialista em automação com IA/LLM..."
+            content={content.description}
         />
         <meta
             property="og:url"
