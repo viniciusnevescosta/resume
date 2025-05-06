@@ -5,3 +5,4 @@
 5. Add react-pdf feature
 6. Add react tests
 7. Add index titles component
+8. Add loading scroll component
