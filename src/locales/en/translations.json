@@ -1,4 +1,11 @@
 {
+    "layout": {
+      "title": "Vinícius Neves Costa | Resume",
+      "description": "Full-Stack Developer with 3+ years building scalable systems in C#, React, and AWS. Specialist in AI/LLM automation, cloud migration (saving R$60k/year), and CI/CD. AWS Certified.",
+      "keywords": "Full-Stack Developer, React, Vue.js, AWS, C#, Microservices, Docker, CI/CD, AI Automation, LLM, RPA, CLI Tools, Cloud Computing, Azure DevOps, Node.js, MongoDB, AWS Certification",
+      "og_title": "Vinícius Neves Costa | Full-Stack Developer C#/React/AWS",
+      "og_description": "Full-Stack Developer with 3+ years building scalable systems in C#, React, and AWS. Specialist in AI/LLM automation..."
+    },
     "header": {
         "navAriaLabel": "Contacts and social networks",
         "emailAriaLabel": "Send Email",
@@ -7,12 +14,12 @@
     },
     "summary": {
         "title": "PROFESSIONAL SUMMARY",
-        "summary": "Full-Stack developer with experience in React/Vue and cloud architectures (AWS). Passionate about solving complex problems with C# and microservices, as well as exploring intelligent automation with AI/LLM. In my personal projects, I create CLI tools to optimize workflows."
+        "summary": "Full-Stack Developer with experience in React/Vue and cloud architectures (AWS). Passionate about solving complex problems with C# and microservices, and exploring intelligent automation with AI/LLM. In my personal projects, I create CLI tools to optimize workflows."
     },
     "experience": {
         "title": "PROFESSIONAL EXPERIENCE",
         "experience_3": {
-            "jobTitle": "Jr. Web Full Stack Developer",
+            "jobTitle": "Full-Stack Web Developer Jr.",
             "startDate": "Jan 2025",
             "endDate": "Present",
             "bullets": {
@@ -27,13 +34,13 @@
             }
         },
         "experience_2": {
-            "jobTitle": "Jr. Infrastructure Analyst",
+            "jobTitle": "Infrastructure Analyst Jr.",
             "startDate": "Jan 2024",
             "endDate": "Dec 2024",
             "bullets": {
-                "firstBullet": "Processed 50K+ time records via Node.js/MongoDB ETL, feeding KPIs",
-                "secondBullet": "Migrated fully to AWS EC2 with Docker, reducing infrastructure costs by R$ 60k/year versus previous on-premise solution",
-                "thirdBullet": "Configured 10+ CI/CD pipelines in Azure DevOps for automated Docker container deployment"
+                "firstBullet": "Processed 50K+ attendance records through Node.js/MongoDB ETL, feeding KPIs",
+                "secondBullet": "Completed full migration to AWS EC2 with Docker, reducing infrastructure costs by R$ 60k/year versus previous on-premise solution",
+                "thirdBullet": "Configured 10+ CI/CD pipelines in Azure DevOps for automatic Docker container deployment"
             }
         },
         "experience": {
@@ -42,18 +49,18 @@
             "endDate": "Dec 2023",
             "bullets": {
                 "firstBullet": "Managed inventory of 300+ IT assets for 200+ users",
-                "secondBullet": "Resolved technical tickets with 92% first-line resolution rate",
-                "thirdBullet": "Implemented Microsoft 365 security policies, reducing incidents by 65%"
+                "secondBullet": "Handled technical tickets with 92% first-line resolution rate",
+                "thirdBullet": "Implemented Microsoft 365 security policies reducing incidents by 65%"
             }
         }
     },
     "hardSkills": {
         "title": "TECHNOLOGIES",
-        "database": "Databases"
+        "database": "Database"
     },
     "certifications": {
         "title": "CERTIFICATIONS",
-        "actionLink": "View verifiable credential",
+        "actionLink": "View verified credential",
         "actionTitle": "Certification"
     },
     "projects": {
@@ -67,7 +74,7 @@
             "description": "CLI tool that simplifies creating semantic commits and branches"
         },
         "project": {
-            "description": "Cross-platform inventory management system for Equilíbrio Natural"
+            "description": "Cross-platform inventory management system for Equilíbrio Natural company"
         }
     },
     "education": {
