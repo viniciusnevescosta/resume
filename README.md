@@ -17,13 +17,13 @@ My minimalist, responsive curriculum vitae with multi-language support and moder
 
 ## Stack Overview
 
-- **Languages**:  
+- **Languages**:
   [![Astro](https://img.shields.io/badge/Astro-BC52EE?logo=astro&logoColor=fff)](#)
   [![React](https://img.shields.io/badge/React-%2320232a.svg?logo=react&logoColor=%2361DAFB)](#)
   [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff)](#)
   [![CSS](https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=fff)](#)
 
-- **Tooling**:  
+- **Tooling**:
   [![pnpm](https://img.shields.io/badge/pnpm-F69220?logo=pnpm&logoColor=fff)](#)
   [![prettier](https://img.shields.io/badge/Prettier-ff69b4?logo=prettier&logoColor=fff)](#)
   [![ESLint](https://img.shields.io/badge/ESLint-4B3263?logo=eslint&logoColor=white)](#)
@@ -65,18 +65,13 @@ Modify CSS variables in src/styles/utils/_variables.css:
 }
 ```
 
-#### ⚠️ Required Configuration:
-
-1. Enable GitHub Pages for gh-pages branch:
-2. Settings → Pages → Build and deployment → Branch: gh-pages
-
 ## Attributions
 
-- **Flexoki Color Scheme:**
-  Base theme colors adapted from [Flexoki](https://github.com/kepano/flexoki) by [Steph Ango](https://stephango.com/) (MIT License)
+- **Tailwind Color Scheme:**
+  Base theme colors adapted from [Tailwind](https://tailwindcss.com/docs/colors)
 
 - **Remix Icons:**
-  Interface icons provided by [Remix Icon](https://remixicon.com/) (Apache-2.0 license)
+  Interface icons provided by [Remix Icon](https://remixicon.com/)
 
 ## License
 
