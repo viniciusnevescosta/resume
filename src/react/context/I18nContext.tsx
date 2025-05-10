@@ -1,14 +1,14 @@
 import * as React from 'react'
 import { useLanguage } from '../hooks/useLang'
 import type { Translation } from '../interfaces/ITranslations'
-import ptTranslations from '../locales/pt/translations.json'
-import esTranslations from '../locales/es/translations.json'
-import enTranslations from '../locales/en/translations.json'
+import enTranslations from '../locales/translations_en.json'
+import esTranslations from '../locales/translations_es.json'
+import ptTranslations from '../locales/translations_pt.json'
 
 const translations = {
-    pt: ptTranslations,
+    en: enTranslations,
     es: esTranslations,
-    en: enTranslations
+    pt: ptTranslations,
 }
 
 const I18nContext = React.createContext<Translation>(translations.en)
