@@ -33,7 +33,7 @@ My minimalist, responsive curriculum vitae with multi-language support and moder
 1. Clone repo:
 
 ```bash
-git clone https://github.com/yourusername/viniciusnevescosta.github.io.git
+git clone https://github.com/viniciusnevescosta/resume.git
 cd viniciusnevescosta.github.io
 ```
 
@@ -76,4 +76,4 @@ Modify CSS variables in src/styles/utils/_variables.css:
 ## License
 
 Distributed under MIT License.
-See [LICENSE](LICENSE) file for full terms.
+See [LICENSE](LICENSE) file for full terms
