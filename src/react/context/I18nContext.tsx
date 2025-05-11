@@ -8,7 +8,7 @@ import ptTranslations from '../locales/translations_pt.json'
 const translations = {
     en: enTranslations,
     es: esTranslations,
-    pt: ptTranslations,
+    pt: ptTranslations
 }
 
 const I18nContext = React.createContext<Translation>(translations.en)
