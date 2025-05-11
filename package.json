@@ -1,10 +1,10 @@
 {
     "type": "module",
     "scripts": {
-        "dev": "astro dev",
+        "dev": "bunx --bun astro dev",
         "check": "prettier --write  \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\" && eslint --fix \"src/**/*.{js,ts,jsx,tsx,astro}\"",
-        "build": "astro check && astro build",
-        "preview": "astro preview",
+        "forge": "bunx --bun astro check && bunx --bun astro build",
+        "preview": "bunx --bun astro preview",
         "astro": "astro"
     },
     "dependencies": {
