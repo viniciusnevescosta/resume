@@ -1,20 +1,18 @@
 // @ts-check
+// https://inlang.com/m/iljlwzfs/paraglide-astro-i18n
+// https://www.reddit.com/r/webdev/comments/195x5yj/astro_and_i18n_insights/
 import { defineConfig } from 'astro/config'
 
 import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
 // import partytown from '@astrojs/partytown' // https://umami.is/
 
-// https://astro.build/config
 export default defineConfig({
-    integrations: [react(), sitemap()], //  pdf() - https://ler.quest/astro-pdf/#other-configuration-options
+    integrations: [react(), sitemap()],
     site: 'https://resume.viniciusnevescosta.com',
     base: '',
     i18n: {
-        locales: ['es', 'en', 'pt'],
-        defaultLocale: 'en',
-        routing: {
-            prefixDefaultLocale: true
-        }
-    }
+      locales: ['en', 'es', 'pt'],
+      defaultLocale: 'en', 
+    },
 })
