@@ -4,7 +4,7 @@ type Language = 'en' | 'es' | 'pt'
 const supportedLocales: Language[] = ['en', 'es', 'pt']
 
 export const useLanguage = () => {
-    const [language, setLanguage] = useState<Language>(() => {
+    const [language] = useState<Language>(() => {
         const urlLang = window.location.pathname.split('/')[1] as Language
         return supportedLocales.includes(urlLang) ? urlLang : 'en'
     })
