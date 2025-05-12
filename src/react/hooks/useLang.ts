@@ -10,6 +10,13 @@ export const useLanguage = () => {
     })
 
     const changeLanguage = (newLang: Language) => {
+        const currentUrlLang = window.location.pathname.split('/')[1] as Language
+        const currentLang = supportedLocales.includes(currentUrlLang) 
+            ? currentUrlLang 
+            : 'en'
+
+        if (currentLang === newLang) return
+
         const currentPath = window.location.pathname
         
         const pathWithoutLocale = supportedLocales.reduce((path, lang) => 
