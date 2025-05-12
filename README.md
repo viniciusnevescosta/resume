@@ -24,7 +24,7 @@ My minimalist, responsive curriculum vitae with multi-language support and moder
   [![CSS](https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=fff)](#)
 
 - **Tooling**:
-  [![pnpm](https://img.shields.io/badge/pnpm-F69220?logo=pnpm&logoColor=fff)](#)
+  [![bun](https://img.shields.io/badge/bun-000?logo=bun&logoColor=fff)](#)
   [![prettier](https://img.shields.io/badge/Prettier-ff69b4?logo=prettier&logoColor=fff)](#)
   [![ESLint](https://img.shields.io/badge/ESLint-4B3263?logo=eslint&logoColor=white)](#)
 
@@ -40,7 +40,25 @@ cd viniciusnevescosta.github.io
 2. Start dev:
 
 ```bash
-pnpm dev
+bun dev
+```
+
+3. Format and check errors:
+
+```bash
+bun check
+```
+
+4. Build for prod:
+
+```bash
+bun forge
+```
+
+5. Preview before deploy:
+
+```bash
+bun preview
 ```
 
 ### Locale Management
@@ -68,12 +86,15 @@ Modify CSS variables in src/styles/utils/_variables.css:
 ## Attributions
 
 - **Tailwind Color Scheme:**
-  Base theme colors adapted from [Tailwind](https://tailwindcss.com/docs/colors)
+  Base theme colors adapted from [Tailwind](https://tailwindcss.com/docs/colors).
 
 - **Remix Icons:**
-  Interface icons provided by [Remix Icon](https://remixicon.com/)
+  Interface icons provided by [Remix Icon](https://remixicon.com/).
+  
+- **Fonts:**
+  Titles provided by [Manrope font](https://fonts.google.com/specimen/Manrope) from [Mikhail Sharanda](https://www.shimmer.cloud/), and paragraphs by [Geist](https://vercel.com/font) from Vercel.
 
 ## License
 
 Distributed under MIT License.
-See [LICENSE](LICENSE) file for full terms
+See [LICENSE](LICENSE) file for full terms.
