@@ -24,7 +24,7 @@ My minimalist, responsive curriculum vitae with multi-language support and moder
   [![CSS](https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=fff)](#)
 
 - **Tooling**:
-  [![pnpm](https://img.shields.io/badge/pnpm-F69220?logo=pnpm&logoColor=fff)](#)
+  [![bun](https://img.shields.io/badge/bun-000?logo=bun&logoColor=fff)](#)
   [![prettier](https://img.shields.io/badge/Prettier-ff69b4?logo=prettier&logoColor=fff)](#)
   [![ESLint](https://img.shields.io/badge/ESLint-4B3263?logo=eslint&logoColor=white)](#)
 
@@ -40,7 +40,7 @@ cd viniciusnevescosta.github.io
 2. Start dev:
 
 ```bash
-pnpm dev
+bun dev
 ```
 
 ### Locale Management
