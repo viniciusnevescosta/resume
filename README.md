@@ -34,7 +34,7 @@ My minimalist, responsive curriculum vitae with multi-language support and moder
 
 ```bash
 git clone https://github.com/viniciusnevescosta/resume.git
-cd viniciusnevescosta.github.io
+cd resume
 ```
 
 2. Start dev:
