@@ -4,23 +4,28 @@ const { content } = Astro.props as HardSkills
 ---
 
 <section itemscope itemtype="http://schema.org/ItemList">
-    <h2 itemprop="name">{content.title}</h2>
+    <h2>
+        <a href={`#${content.title.toLowerCase().replace(/\s+/g, '_')}`}
+            >{content.title}</a>
+    </h2>
     <div class="skill-category">
         <dl class="skill-group">
             <dt>
-                <strong>Front-end</strong>
+                <strong>Web</strong>
             </dt>
             <dd itemprop="itemListElement" class="skill-item">React</dd>
             <dd itemprop="itemListElement" class="skill-item">Vue</dd>
+            <dd itemprop="itemListElement" class="skill-item">Astro</dd>
+            <dd itemprop="itemListElement" class="skill-item">Wordpress</dd>
         </dl>
         <dl class="skill-group">
             <dt>
-                <strong>Back-end / Cloud</strong>
+                <strong>Languages</strong>
             </dt>
+            <dd itemprop="itemListElement" class="skill-item">Python</dd>
             <dd itemprop="itemListElement" class="skill-item">C#</dd>
             <dd itemprop="itemListElement" class="skill-item">Golang</dd>
-            <dd itemprop="itemListElement" class="skill-item">Docker</dd>
-            <dd itemprop="itemListElement" class="skill-item">AWS</dd>
+            <dd itemprop="itemListElement" class="skill-item">Shell</dd>
         </dl>
         <dl class="skill-group">
             <dt>
@@ -30,6 +35,15 @@ const { content } = Astro.props as HardSkills
             <dd itemprop="itemListElement" class="skill-item">MySQL</dd>
             <dd itemprop="itemListElement" class="skill-item">MongoDB</dd>
             <dd itemprop="itemListElement" class="skill-item">Firebase</dd>
+        </dl>
+        <dl class="skill-group">
+            <dt>
+                <strong>Infra & Cloud</strong>
+            </dt>
+            <dd itemprop="itemListElement" class="skill-item">Docker</dd>
+            <dd itemprop="itemListElement" class="skill-item">N8N</dd>
+            <dd itemprop="itemListElement" class="skill-item">AWS</dd>
+            <dd itemprop="itemListElement" class="skill-item">Azure</dd>
         </dl>
     </div>
 </section>
