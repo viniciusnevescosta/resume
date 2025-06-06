@@ -3,29 +3,24 @@
     justify-content: end;
     position: fixed;
     height: 100%;
-    right: 0;
+    left: 0;
     top: 0;
 }
 
 .container-aside aside {
     display: flex;
-    align-items: center;
-    padding: 0.5rem;
+    /* align-items: center; */
+    /* padding: 0.5rem; */
 }
 
 .container-aside .options-menu {
     display: flex;
     flex-direction: column;
-    padding: 0.5rem;
-    margin-right: 2rem;
-    border: 0.15rem solid var(--text-color);
-    border-radius: 0.5rem;
-    opacity: 35%;
-    transition: opacity 0.1s ease;
-}
-
-.container-aside .options-menu:hover {
-    opacity: 100%;
+    padding: 2rem 0.6rem 2rem 0.6rem;
+    border-right: 0.10rem solid var(--skill-border);
+    background-color: var(--bg2-color);
+    justify-content: end;
+    gap: 0.5rem;
 }
 
 @media (width <= 64rem) {
