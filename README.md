@@ -90,7 +90,6 @@ Modify CSS variables in src/styles/utils/_variables.css:
 
 - **Remix Icons:**
   Interface icons provided by [Remix Icon](https://remixicon.com/).
-  
 - **Fonts:**
   Titles provided by [Manrope font](https://fonts.google.com/specimen/Manrope) from [Mikhail Sharanda](https://www.shimmer.cloud/), and paragraphs by [Geist](https://vercel.com/font) from Vercel.
 
