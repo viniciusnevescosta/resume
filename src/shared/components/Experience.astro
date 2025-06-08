@@ -4,7 +4,11 @@ const { content } = Astro.props as Experience
 ---
 
 <section>
-    <h2>{content.title}</h2>
+    <h2>
+        <a href={`#${content.title.toLowerCase().replace(/\s+/g, '_')}`}
+            >{content.title}</a
+        >
+    </h2>
     <article itemscope itemtype="http://schema.org/Organization">
         <h3>
             <span itemprop="jobTitle">{content.experience_3.jobTitle}</span>
@@ -12,6 +16,7 @@ const { content } = Astro.props as Experience
             <span itemprop="name">MTP Brasil</span>
         </h3>
         <p class="period">
+            <!-- Automations with N8N, C4 Architectures -->
             <time itemprop="startDate" datetime="2025-01"
                 >{content.experience_3.startDate}</time
             >{' '}
@@ -45,6 +50,7 @@ const { content } = Astro.props as Experience
             <span itemprop="name">MTP Brasil</span>
         </h3>
         <p class="period">
+            <!-- ISOs 27001 and 9001 -->
             <time itemprop="startDate" datetime="2024-01"
                 >{content.experience_2.startDate}</time
             >{' '}

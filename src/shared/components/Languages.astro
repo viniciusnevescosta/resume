@@ -6,7 +6,8 @@ const { content } = Astro.props as Languages
 <section>
     <h2>
         <a href={`#${content.title.toLowerCase().replace(/\s+/g, '_')}`}
-            >{content.title}</a>
+            >{content.title}</a
+        >
     </h2>
     <ul class="language-proficiency">
         <li itemscope itemtype="http://schema.org/Language">

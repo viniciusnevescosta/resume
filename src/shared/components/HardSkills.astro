@@ -6,7 +6,8 @@ const { content } = Astro.props as HardSkills
 <section itemscope itemtype="http://schema.org/ItemList">
     <h2>
         <a href={`#${content.title.toLowerCase().replace(/\s+/g, '_')}`}
-            >{content.title}</a>
+            >{content.title}</a
+        >
     </h2>
     <div class="skill-category">
         <dl class="skill-group">
