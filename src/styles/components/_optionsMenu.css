@@ -16,11 +16,11 @@
 .container-aside .options-menu {
     display: flex;
     flex-direction: column;
-    padding: 2rem 0.6rem 2rem 0.6rem;
+    padding: 4rem 0.8rem 4rem 0.8rem;
     border-right: 0.10rem solid var(--skill-border);
     background-color: var(--bg2-color);
     justify-content: end;
-    gap: 0.5rem;
+    gap: 0.8rem;
 }
 
 @media (width <= 64rem) {
