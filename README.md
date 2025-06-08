@@ -63,7 +63,7 @@ bun preview
 
 ### Locale Management
 
-Edit JSON files in /src/locales/:
+Edit JSON files in /src/locales:
 
 ```
 ├─ translations_en.json
