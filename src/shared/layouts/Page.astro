@@ -8,12 +8,13 @@ import Certifications from '../components/Certifications.astro'
 import Projects from '../components/Projects.astro'
 import Education from '../components/Education.astro'
 import Languages from '../components/Languages.astro'
+import MenuBar from '../components/MenuBar.astro'
 import { App } from '../../react/App'
 
 type Lang = 'en' | 'es' | 'pt'
 
 interface Props {
-  lang: Lang
+    lang: Lang
 }
 
 const { lang } = Astro.props
@@ -32,5 +33,6 @@ const content = await import(`../../locales/translations_${lang}.json`)
         <Education content={content.education} />
         <Languages content={content.languages} />
     </main>
+    <MenuBar />
     <App client:only="react" />
 </Layout>

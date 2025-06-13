@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { BottomBar } from './components/BottomBar'
-import { OptionsMenu } from './components/Menu'
-import { OptionsModal } from './components/Modal'
+// import { BottomBar } from './components/BottomBar'
+// import { OptionsMenu } from './components/Menu'
+// import { OptionsModal } from './components/Modal'
+// import { Notification } from './components/Notification'
 import { useTheme } from './hooks/useTheme'
 import { useLanguage } from './hooks/useLang'
 import { I18nProvider, useI18n } from './context/I18nContext'
@@ -78,20 +79,21 @@ const AppContent = () => {
 
     return (
         <>
-            <OptionsMenu
+            {/* <OptionsMenu
                 onClickModal={handleOpenModal}
                 Theme={effectiveTheme}
             />
-            <BottomBar onClickModal={handleOpenModal} Theme={effectiveTheme} />
+            <BottomBar onClickModal={handleOpenModal} Theme={effectiveTheme} /> */}
 
-            {activeModal.type && (
+            {/* {activeModal.type && (
                 <OptionsModal
                     modalTitle={modalConfigs[activeModal.type].title}
                     modalOptions={modalConfigs[activeModal.type].options}
                     isOpen={activeModal.isOpen}
                     onClose={handleCloseModal}
                 />
-            )}
+            )} */}
+            {/* <Notification /> */}
         </>
     )
 }
