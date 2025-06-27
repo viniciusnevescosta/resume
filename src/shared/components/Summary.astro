@@ -4,6 +4,10 @@ const { content } = Astro.props as Summary
 ---
 
 <section>
-    <h2>{content.title}</h2>
+    <h2>
+        <a href={`#${content.title.toLowerCase().replace(/\s+/g, '_')}`}
+            >{content.title}</a
+        >
+    </h2>
     <p>{content.summary}</p>
 </section>

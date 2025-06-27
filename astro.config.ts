@@ -12,7 +12,7 @@ export default defineConfig({
     site: 'https://resume.viniciusnevescosta.com',
     base: '',
     i18n: {
-      locales: ['en', 'es', 'pt'],
-      defaultLocale: 'en', 
-    },
+        locales: ['en', 'es', 'pt'],
+        defaultLocale: 'en'
+    }
 })

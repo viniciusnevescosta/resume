@@ -4,10 +4,23 @@ const { content } = Astro.props as Projects
 ---
 
 <section>
-    <h2>{content.title}</h2>
+    <h2>
+        <a href={`#${content.title.toLowerCase().replace(/\s+/g, '_')}`}
+            >{content.title}</a
+        >
+    </h2>
     <ul>
         <li itemscope itemtype="http://schema.org/CreativeWork">
-            <strong itemprop="name">ContainerFlow</strong>
+            <a
+                href="https://github.com/viniciusnevescosta/ContainerFlow"
+                target="_blank"
+                rel="noreferrer"
+                title={content.actionTitle}
+                itemprop="name"
+            >
+                container-flow
+                <i class="ri-arrow-right-up-line"></i>
+            </a>
             <p>
                 {content.project_3.description}
             </p>
@@ -19,17 +32,18 @@ const { content } = Astro.props as Projects
                 itemprop="url"
                 href="https://github.com/viniciusnevescosta/ContainerFlow"
             />
+        </li>
+        <li itemscope itemtype="http://schema.org/CreativeWork">
             <a
-                href="https://github.com/viniciusnevescosta/ContainerFlow"
+                href="https://github.com/viniciusnevescosta/CommitFlow"
                 target="_blank"
                 rel="noreferrer"
                 title={content.actionTitle}
+                itemprop="name"
             >
-                {content.actionLink}
+                commit-flow
+                <i class="ri-arrow-right-up-line"></i>
             </a>
-        </li>
-        <li itemscope itemtype="http://schema.org/CreativeWork">
-            <strong itemprop="name">CommitFlow</strong>
             <p>
                 {content.project_2.description}
             </p>
@@ -41,17 +55,18 @@ const { content } = Astro.props as Projects
                 itemprop="url"
                 href="https://github.com/viniciusnevescosta/CommitFlow"
             />
+        </li>
+        <li itemscope itemtype="http://schema.org/CreativeWork">
             <a
-                href="https://github.com/viniciusnevescosta/CommitFlow"
+                href="https://github.com/FrogDevs/etec-final-course-project"
                 target="_blank"
                 rel="noreferrer"
                 title={content.actionTitle}
+                itemprop="name"
             >
-                {content.actionLink}
+                equilibrio-natural-system
+                <i class="ri-arrow-right-up-line"></i>
             </a>
-        </li>
-        <li itemscope itemtype="http://schema.org/CreativeWork">
-            <strong itemprop="name">Equilíbrio Natural - ERP</strong>
             <p>
                 {content.project.description}
             </p>
@@ -63,14 +78,6 @@ const { content } = Astro.props as Projects
                 itemprop="url"
                 href="https://github.com/FrogDevs/etec-final-course-project"
             />
-            <a
-                href="https://github.com/FrogDevs/etec-final-course-project"
-                target="_blank"
-                rel="noreferrer"
-                title={content.actionTitle}
-            >
-                {content.actionLink}
-            </a>
         </li>
     </ul>
 </section>

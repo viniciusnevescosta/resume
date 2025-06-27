@@ -1,0 +1,38 @@
+---
+import Layout from './Layout.astro'
+import Header from '../components/Header.astro'
+import Summary from '../components/Summary.astro'
+import Experience from '../components/Experience.astro'
+import HardSkills from '../components/HardSkills.astro'
+import Certifications from '../components/Certifications.astro'
+import Projects from '../components/Projects.astro'
+import Education from '../components/Education.astro'
+import Languages from '../components/Languages.astro'
+import MenuBar from '../components/MenuBar.astro'
+import { App } from '../../react/App'
+
+type Lang = 'en' | 'es' | 'pt'
+
+interface Props {
+    lang: Lang
+}
+
+const { lang } = Astro.props
+
+const content = await import(`../../locales/translations_${lang}.json`)
+---
+
+<Layout content={content.layout}>
+    <Header content={content.header} />
+    <main>
+        <Summary content={content.summary} />
+        <Experience content={content.experience} />
+        <HardSkills content={content.hardSkills} />
+        <Certifications content={content.certifications} />
+        <Projects content={content.projects} />
+        <Education content={content.education} />
+        <Languages content={content.languages} />
+    </main>
+    <!-- <MenuBar /> -->
+    <App client:only="react" />
+</Layout>

@@ -18,6 +18,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
     z-index: 999;
     pointer-events: auto;
     cursor: pointer;
@@ -98,6 +99,7 @@
 .popup-exit kbd {
     background: var(--bg2-color);
     padding: 0.2rem 0.5rem;
+    margin: 0 0.2rem 0 0.2rem;
     border-radius: 0.25rem;
     border: 1px solid var(--skill-border);
 }

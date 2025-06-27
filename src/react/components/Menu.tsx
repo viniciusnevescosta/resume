@@ -18,6 +18,15 @@ export const OptionsMenu = ({ onClickModal, Theme }: IMenu) => {
             <aside>
                 <nav className="options-menu">
                     <i
+                        id="lang"
+                        className="icon ri-earth-line ri-2x"
+                        title={i18n.menu.langTitle}
+                        role="button"
+                        tabIndex={0}
+                        onClick={() => onClickModal('lang')}
+                        onKeyDown={(e) => handleKeyPress(e, 'lang')}
+                    />
+                    <i
                         id="theme"
                         className={
                             Theme === 'dark'
@@ -30,22 +39,13 @@ export const OptionsMenu = ({ onClickModal, Theme }: IMenu) => {
                         onClick={() => onClickModal('theme')}
                         onKeyDown={(e) => handleKeyPress(e, 'theme')}
                     />
-                    <i
-                        id="lang"
-                        className="icon ri-earth-line ri-2x"
-                        title={i18n.menu.langTitle}
-                        role="button"
-                        tabIndex={0}
-                        onClick={() => onClickModal('lang')}
-                        onKeyDown={(e) => handleKeyPress(e, 'lang')}
-                    />
-                    <i
+                    {/* <i
                         id="file"
                         className="icon ri-file-download-line ri-2x"
                         title={i18n.menu.fileTitle}
                         role="button"
                         tabIndex={0}
-                    />
+                    /> */}
                 </nav>
             </aside>
         </div>

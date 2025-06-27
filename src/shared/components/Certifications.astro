@@ -4,26 +4,29 @@ const { content } = Astro.props as Certifications
 ---
 
 <section>
-    <h2>{content.title}</h2>
+    <h2>
+        <a href={`#${content.title.toLowerCase().replace(/\s+/g, '_')}`}
+            >{content.title}</a
+        >
+    </h2>
     <ul>
         <li
             itemscope
             itemtype="http://schema.org/EducationalOccupationalCredential"
         >
-            <strong itemprop="name">AWS Certified Cloud Practitioner</strong>
-            <meta
-                itemprop="url"
-                content="https://www.credly.com/badges/517fd129-d1e7-4851-a9f7-09a2abadbf01"
-            />
-            <br />
             <a
                 href="https://www.credly.com/badges/517fd129-d1e7-4851-a9f7-09a2abadbf01"
                 target="_blank"
                 rel="noreferrer"
                 title={content.actionTitle}
-            >
-                {content.actionLink}
+                itemprop="name"
+                >AWS Certified Cloud Practitioner
+                <i class="ri-arrow-right-up-line"></i>
             </a>
+            <meta
+                itemprop="url"
+                content="https://www.credly.com/badges/517fd129-d1e7-4851-a9f7-09a2abadbf01"
+            />
         </li>
     </ul>
 </section>
