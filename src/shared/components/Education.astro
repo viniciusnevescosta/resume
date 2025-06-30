@@ -4,7 +4,22 @@ const { content } = Astro.props as Education
 ---
 
 <section>
-    <h2>{content.title}</h2>
+    <h2>
+        <a href={`#${content.title.toLowerCase().replace(/\s+/g, '_')}`}
+            >{content.title}</a
+        >
+    </h2>
+    <p class="period">
+        <time itemprop="startDate" datetime="2020-02"> Jul 2025 </time>{' '}
+        - <time itemprop="endDate" datetime="2022-12">Now</time>
+    </p>
+    <ul>
+        <li itemscope itemtype="http://schema.org/EducationalEvent">
+            <span itemprop="name">
+                <strong>Data Science</strong> - <strong>Univesp</strong>
+            </span>
+        </li>
+    </ul>
     <p class="period">
         <time itemprop="startDate" datetime="2020-02">
             {content.formation.starDate}
@@ -16,15 +31,10 @@ const { content } = Astro.props as Education
     <ul>
         <li itemscope itemtype="http://schema.org/EducationalEvent">
             <span itemprop="name">
-                <strong>{content.formation.title}</strong>
+                <strong>{content.formation.title}</strong> - <strong
+                    >Etec</strong
+                >
             </span>
-            <div
-                itemprop="organizer"
-                itemscope
-                itemtype="http://schema.org/EducationalOrganization"
-            >
-                <span itemprop="name">{content.formation.organization}</span>
-            </div>
         </li>
     </ul>
 </section>
