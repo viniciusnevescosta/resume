@@ -1,23 +1,18 @@
-# Resume
+# Vinícius Costa - Resume
 
-Minimal one-page resume built with Astro and Tailwind v4.
+My minimalist, responsive curriculum vitae with multi-language support and modern web practices.
 
-## Content
+![image](https://github.com/user-attachments/assets/e9ab59ec-ffce-46cd-ae48-9e583e553247)
 
-Edit the resume content in:
+## Core Features
 
-- `src/content/resume/pt.md`
-- `src/content/resume/en.md`
+- **Smart Themes**: Light/dark mode toggle with CSS custom properties
+- **Multi-Lingual**: English and Portuguese support
+- **Fluid Responsiveness**: Optimized for all screen sizes
+- **Print-Ready**: Clean formatting for physical copies
+- **Accessibility First**: Semantic HTML and ARIA labels
 
-## Commands
+## License
 
-```bash
-bun install
-bun run dev
-bun run build
-```
-
-## Notes
-
-- The PDF download is generated dynamically from the current page content at click time.
-- Edit the Markdown files in `src/content/resume/` to update both the page content and the exported PDF output.
+Distributed under MIT License.
+See [LICENSE](LICENSE) file for full terms.
