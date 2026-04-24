@@ -1,0 +1,395 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+
+  --resume-bg: oklch(95.1% 0.009 78.3);
+  --resume-bg-elevated: oklch(96.3% 0.009 78.3);
+  --resume-bg-subtle: oklch(93.1% 0.014 74.4);
+  --resume-fg: oklch(38.1% 0.024 248.4);
+  --resume-heading: oklch(28.1% 0.016 248.4);
+  --resume-muted: oklch(48.6% 0.016 251.7);
+  --resume-faint: oklch(68.2% 0.009 67.7);
+  --resume-link: oklch(50.4% 0.055 244.5);
+  --resume-link-hover: oklch(51.4% 0.05 235.6);
+  --resume-primary: oklch(38.1% 0.024 248.4);
+  --resume-primary-contrast: oklch(96.3% 0.009 78.3);
+  --resume-accent: oklch(69.2% 0.094 57.8);
+  --resume-accent-soft: oklch(84.3% 0.058 66.9);
+  --resume-ui: oklch(89% 0.02 72.6);
+  --resume-ui-strong: oklch(83.4% 0.026 69.4);
+  --resume-border: oklch(83.4% 0.026 69.4);
+  --resume-panel: color-mix(in oklab, var(--resume-bg-elevated) 88%, transparent);
+  --resume-panel-border: color-mix(in oklab, var(--resume-border) 78%, transparent);
+  --resume-panel-shadow: 0 20px 42px color-mix(in srgb, oklch(28.1% 0.016 248.4) 10%, transparent);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --resume-bg: oklch(28.1% 0.016 248.4);
+  --resume-bg-elevated: oklch(22.4% 0.014 253.1);
+  --resume-bg-subtle: oklch(31.2% 0.023 248.6);
+  --resume-fg: oklch(83.4% 0.026 69.4);
+  --resume-heading: oklch(96.3% 0.009 78.3);
+  --resume-muted: oklch(68.2% 0.009 67.7);
+  --resume-faint: oklch(61.9% 0.015 248.1);
+  --resume-link: oklch(64.7% 0.064 244.4);
+  --resume-link-hover: oklch(64.4% 0.052 235.5);
+  --resume-primary: oklch(83.4% 0.026 69.4);
+  --resume-primary-contrast: oklch(22.4% 0.014 253.1);
+  --resume-accent: oklch(69.2% 0.094 57.8);
+  --resume-accent-soft: oklch(84.3% 0.058 66.9);
+  --resume-ui: oklch(31.2% 0.023 248.6);
+  --resume-ui-strong: oklch(34.2% 0.025 246.3);
+  --resume-border: oklch(34.2% 0.025 246.3);
+  --resume-panel: color-mix(in oklab, var(--resume-bg-elevated) 90%, transparent);
+  --resume-panel-border: color-mix(in oklab, var(--resume-border) 82%, transparent);
+  --resume-panel-shadow: 0 24px 52px rgba(0, 0, 0, 0.34);
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--resume-bg);
+}
+
+body.resume-body {
+  min-height: 100vh;
+  background: var(--resume-bg);
+  color: var(--resume-fg);
+}
+
+body.resume-body,
+body.resume-body p,
+body.resume-body li,
+body.resume-body dd,
+body.resume-body dt,
+body.resume-body blockquote {
+  color: var(--resume-fg);
+}
+
+body.resume-body h1,
+body.resume-body h2,
+body.resume-body h3,
+body.resume-body h4,
+body.resume-body h5,
+body.resume-body h6,
+.resume-header h1,
+.resume-abstract h2,
+.resume-content h2,
+.resume-content h3 {
+  color: var(--resume-heading);
+}
+
+.page-shell {
+  position: relative;
+}
+
+.resume-page {
+  margin-inline: auto;
+
+  max-width: 52rem;
+}
+
+.resume-header {
+  margin-bottom: 2rem;
+}
+
+.resume-header h1 {
+  margin-bottom: 0.3rem;
+}
+
+.resume-header .author {
+  margin-top: 0;
+  color: var(--resume-muted);
+}
+
+.resume-header .author a,
+.resume-content a,
+.resume-abstract a {
+  color: var(--resume-link);
+  text-decoration-thickness: 0.05em;
+  text-underline-offset: 0.14em;
+  transition: color 140ms ease;
+}
+
+.resume-header .author a:hover,
+.resume-content a:hover,
+.resume-abstract a:hover,
+.resume-header .author a:focus-visible,
+.resume-content a:focus-visible,
+.resume-abstract a:focus-visible {
+  color: var(--resume-link-hover);
+}
+
+.resume-abstract {
+  margin-bottom: 2.2rem;
+}
+
+.resume-abstract h2 {
+  margin-bottom: 0.5rem;
+}
+
+.resume-abstract p {
+  margin: 0;
+}
+
+.resume-content > h1,
+.resume-content > p:first-of-type {
+  display: none;
+}
+
+.resume-content h2 {
+  scroll-margin-top: 2rem;
+}
+
+.resume-content ul {
+  margin-top: 0.55rem;
+}
+
+.resume-content li + li {
+  margin-top: 0.35rem;
+}
+
+.resume-sidebar__dock {
+  position: relative;
+}
+
+.resume-sidebar__trigger {
+  display: flex;
+  height: 3rem;
+  width: 3rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--resume-panel-border);
+  border-radius: 9999px; /* Circulo perfeito */
+  background: var(--resume-panel);
+  color: color-mix(in oklab, var(--resume-fg) 62%, transparent);
+  box-shadow: var(--resume-panel-shadow);
+  backdrop-filter: blur(18px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.resume-sidebar__trigger svg {
+  height: 1.25rem;
+  width: 1.25rem;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.resume-sidebar__dock:hover .resume-sidebar__trigger,
+.resume-sidebar__dock:focus-within .resume-sidebar__trigger {
+  color: var(--resume-fg);
+  border-color: color-mix(in oklab, var(--resume-accent) 42%, var(--resume-panel-border));
+}
+
+.resume-sidebar__peek {
+  position: absolute;
+  inset: 0 auto 0 0;
+  display: flex;
+  width: 3rem;
+  align-items: center;
+  justify-content: center;
+  color: color-mix(in oklab, var(--resume-fg) 62%, transparent);
+}
+
+.resume-sidebar__peek svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+.resume-sidebar__panel {
+  position: absolute;
+  right: calc(100% + 0.4rem); /* Distância reduzida (antes era 1rem) */
+  top: 50%;
+  width: 16rem;
+  display: grid;
+  gap: 1.2rem;
+  padding: 1.25rem;
+  border: 1px solid var(--resume-panel-border);
+  border-radius: 1rem;
+  background: var(--resume-panel);
+  box-shadow: var(--resume-panel-shadow);
+  backdrop-filter: blur(18px);
+
+  /* Força a fonte moderna (sans-serif) apenas dentro do painel */
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  /* Estado oculto: a distância do translateX também precisa ser reduzida para bater com o novo right */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-50%) translateX(0.4rem) scale(0.95);
+  transform-origin: right center;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+.resume-sidebar__dock:hover .resume-sidebar__panel,
+.resume-sidebar__dock:focus-within .resume-sidebar__panel {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(-50%) translateX(0) scale(1);
+}
+
+.resume-sidebar__eyebrow {
+  margin: 0;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--resume-fg) 56%, transparent);
+}
+
+.resume-sidebar__action,
+.resume-sidebar__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.45rem;
+  border: 1px solid var(--resume-panel-border);
+  border-radius: 0.78rem;
+  background: color-mix(in oklab, var(--resume-ui) 56%, transparent);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    transform 140ms ease,
+    border-color 140ms ease,
+    background-color 140ms ease,
+    color 140ms ease;
+}
+
+.resume-sidebar__action:hover,
+.resume-sidebar__action:focus-visible,
+.resume-sidebar__button:hover,
+.resume-sidebar__button:focus-visible {
+  border-color: color-mix(in oklab, var(--resume-accent) 42%, var(--resume-panel-border));
+  background: color-mix(in oklab, var(--resume-accent-soft) 46%, var(--resume-ui));
+}
+
+.resume-sidebar__action {
+  width: 100%;
+  justify-content: flex-start;
+  padding: 0.78rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.resume-sidebar__action:disabled {
+  cursor: wait;
+
+  opacity: 0.7;
+}
+
+.resume-sidebar__action-icon {
+  display: inline-flex;
+  height: 1.15rem;
+  width: 1.15rem;
+  align-items: center;
+  justify-content: center;
+  color: color-mix(in oklab, var(--resume-fg) 76%, transparent);
+}
+
+.resume-sidebar__action-icon svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+.resume-sidebar__group {
+  display: grid;
+  gap: 0.42rem;
+}
+
+.resume-sidebar__group > p {
+  margin: 0;
+  font-size: 0.69rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--resume-fg) 54%, transparent);
+}
+
+.resume-sidebar__buttons {
+  display: grid;
+  gap: 0.42rem;
+}
+
+.resume-sidebar__buttons--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.resume-sidebar__button {
+  padding: 0.55rem 0.72rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.resume-sidebar__button.is-active,
+.resume-sidebar__button[data-active="true"] {
+  border-color: var(--resume-primary);
+  background: var(--resume-primary);
+  color: var(--resume-primary-contrast);
+}
+
+.resume-pdf-stage {
+  position: fixed;
+  left: -100000px;
+  top: 0;
+  width: 794px;
+  height: 1123px;
+  overflow: hidden;
+  padding: 34px 44px;
+  background: #ffffff;
+  color: #000000;
+}
+
+.resume-pdf-stage,
+.resume-pdf-stage * {
+  color: #000000 !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+.resume-pdf-stage a {
+  color: #000000 !important;
+  text-decoration-color: currentColor !important;
+}
+
+.resume-pdf-stage .resume-page {
+  max-width: none !important;
+
+  margin: 0 !important;
+}
+
+.resume-pdf-stage .resume-abstract,
+.resume-pdf-stage .resume-header,
+.resume-pdf-stage .resume-content {
+  break-inside: avoid;
+}
+
+@media (max-width: 1023px) {
+  .page-shell {
+    padding-bottom: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .resume-page {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,254 @@
+---
+import type { Lang } from '../scripts/i18n';
+import { labels, languageLinks } from '../scripts/i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = labels[lang];
+const links = languageLinks[lang];
+const pdfFileName = lang === 'pt'
+  ? 'vinicius-neves-costa-curriculo-pt.pdf'
+  : 'vinicius-neves-costa-resume-en.pdf';
+---
+
+<aside class="resume-sidebar fixed right-4 top-1/2 z-40 hidden -translate-y-1/2 lg:block">
+  <div class="resume-sidebar__dock group relative flex items-center justify-end">
+    
+      <button type="button" class="resume-sidebar__trigger" aria-label="Abrir opções">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+      </button>
+
+    <div class="resume-sidebar__panel">
+      <p class="resume-sidebar__eyebrow">{t.settings}</p>
+
+      <button type="button" class="resume-sidebar__action" data-download-pdf data-pdf-filename={pdfFileName} data-pdf-loading-label={t.generatingPdf}>
+        <span class="resume-sidebar__action-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3v11" />
+            <path d="m7 11 5 5 5-5" />
+            <path d="M5 21h14" />
+          </svg>
+        </span>
+        <span>{t.download}</span>
+      </button>
+
+      <div class="resume-sidebar__group">
+        <p>{t.language}</p>
+        <div class="resume-sidebar__buttons resume-sidebar__buttons--2">
+          {links.map((item) => (
+            <a
+              href={item.href}
+              class:list={['resume-sidebar__button', item.lang === lang && 'is-active']}
+              aria-current={item.lang === lang ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="resume-sidebar__group">
+        <p>{t.theme}</p>
+        <div class="resume-sidebar__buttons resume-sidebar__buttons--2">
+          <button type="button" class="resume-sidebar__button theme-button" data-theme-value="light" data-active="false">{t.light}</button>
+          <button type="button" class="resume-sidebar__button theme-button" data-theme-value="dark" data-active="false">{t.dark}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<script>
+  import html2canvas from 'html2canvas';
+  import { jsPDF } from 'jspdf';
+
+  declare global {
+    interface Window {
+      __resumeSidebarBound?: boolean;
+    }
+  }
+
+  interface PdfLinkRect {
+    href: string;
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+  }
+
+  const A4_WIDTH_PX = 794;
+  const A4_HEIGHT_PX = 1123;
+  const A4_WIDTH_MM = 210;
+  const A4_HEIGHT_MM = 297;
+  const STAGE_PADDING_X = 44;
+  const STAGE_PADDING_Y = 34;
+
+  const syncThemeControls = () => {
+    const current = document.documentElement.dataset.theme ?? 'light';
+    const darkEnabled = current === 'dark';
+    document.body.classList.toggle('latex-dark', darkEnabled);
+
+    document.querySelectorAll<HTMLButtonElement>('.theme-button').forEach((button) => {
+      const active = button.dataset.themeValue === current;
+      button.dataset.active = String(active);
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+  };
+
+  const setTheme = (theme: 'light' | 'dark') => {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem('resume-theme', theme);
+    syncThemeControls();
+  };
+
+  const waitForPaint = () => new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
+
+  const buildPdfStage = (source: HTMLElement) => {
+    const stage = document.createElement('div');
+    stage.className = 'resume-pdf-stage';
+
+    const clone = source.cloneNode(true) as HTMLElement;
+    clone.classList.add('resume-pdf-stage__document');
+    clone.removeAttribute('data-resume-document');
+
+    stage.append(clone);
+    document.body.append(stage);
+
+    return { stage, clone };
+  };
+
+  const fitCloneToSinglePage = (clone: HTMLElement) => {
+    const availableHeight = A4_HEIGHT_PX - STAGE_PADDING_Y * 2;
+    const naturalHeight = clone.scrollHeight;
+
+    if (naturalHeight <= availableHeight) return;
+
+    const scale = availableHeight / naturalHeight;
+    clone.style.transform = `scale(${scale})`;
+    clone.style.transformOrigin = 'top left';
+    clone.style.width = `${100 / scale}%`;
+  };
+
+  const extractPdfLinks = (stage: HTMLElement, clone: HTMLElement) => {
+    const stageRect = stage.getBoundingClientRect();
+    const links: PdfLinkRect[] = [];
+
+    clone.querySelectorAll<HTMLAnchorElement>('a[href]').forEach((anchor) => {
+      const href = anchor.href?.trim();
+      if (!href) return;
+
+      const rect = anchor.getBoundingClientRect();
+      if (rect.width <= 0 || rect.height <= 0) return;
+
+      links.push({
+        href,
+        x: rect.left - stageRect.left,
+        y: rect.top - stageRect.top,
+        width: rect.width,
+        height: rect.height,
+      });
+    });
+
+    return links;
+  };
+
+  const applyPdfLinks = (pdf: jsPDF, linkRects: PdfLinkRect[]) => {
+    const scaleX = A4_WIDTH_MM / A4_WIDTH_PX;
+    const scaleY = A4_HEIGHT_MM / A4_HEIGHT_PX;
+
+    linkRects.forEach((link) => {
+      pdf.link(
+        link.x * scaleX,
+        link.y * scaleY,
+        link.width * scaleX,
+        link.height * scaleY,
+        { url: link.href },
+      );
+    });
+  };
+
+  const downloadCurrentResumePdf = async (button: HTMLButtonElement) => {
+    const source = document.querySelector<HTMLElement>('[data-resume-document]');
+    if (!source) return;
+
+    const defaultLabel = button.querySelector('span:last-child')?.textContent?.trim() ?? 'Download PDF';
+    const loadingLabel = button.dataset.pdfLoadingLabel ?? defaultLabel;
+    const labelNode = button.querySelector('span:last-child');
+    const filename = button.dataset.pdfFilename ?? 'resume.pdf';
+
+    button.disabled = true;
+    if (labelNode) labelNode.textContent = loadingLabel;
+
+    const { stage, clone } = buildPdfStage(source);
+
+    try {
+      await waitForPaint();
+      fitCloneToSinglePage(clone);
+      await waitForPaint();
+
+      const linkRects = extractPdfLinks(stage, clone);
+      const canvas = await html2canvas(stage, {
+        scale: 2,
+        backgroundColor: '#ffffff',
+        useCORS: true,
+        width: A4_WIDTH_PX,
+        height: A4_HEIGHT_PX,
+        windowWidth: A4_WIDTH_PX,
+        windowHeight: A4_HEIGHT_PX,
+      });
+
+      const image = canvas.toDataURL('image/jpeg', 0.98);
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4',
+        compress: true,
+      });
+
+      pdf.addImage(image, 'JPEG', 0, 0, A4_WIDTH_MM, A4_HEIGHT_MM, undefined, 'FAST');
+      applyPdfLinks(pdf, linkRects);
+      pdf.save(filename);
+    } finally {
+      stage.remove();
+      button.disabled = false;
+      if (labelNode) labelNode.textContent = defaultLabel;
+    }
+  };
+
+  const syncUi = () => {
+    syncThemeControls();
+  };
+
+  if (!window.__resumeSidebarBound) {
+    window.__resumeSidebarBound = true;
+
+    document.addEventListener('click', async (event) => {
+      const target = (event.target as HTMLElement | null)?.closest<HTMLElement>('[data-theme-value], [data-download-pdf]');
+      if (!target) return;
+
+      if (target instanceof HTMLButtonElement && target.hasAttribute('data-download-pdf')) {
+        event.preventDefault();
+        await downloadCurrentResumePdf(target);
+        return;
+      }
+
+      const theme = target.dataset.themeValue;
+      if (theme === 'light' || theme === 'dark') {
+        event.preventDefault();
+        setTheme(theme);
+      }
+    });
+
+    document.addEventListener('astro:page-load', syncUi);
+  }
+
+  syncUi();
+</script>

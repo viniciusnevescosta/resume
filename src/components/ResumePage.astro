@@ -1,0 +1,49 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import { fade } from 'astro:transitions';
+import FloatingSidebar from './FloatingSidebar.astro';
+import { labels, type Lang } from '../scripts/i18n';
+
+interface Props {
+  entry: CollectionEntry<'resume'>;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const lang = entry.data.lang as Lang;
+const t = labels[lang];
+const groupedContacts = [entry.data.contacts.slice(0, 3), entry.data.contacts.slice(3)];
+---
+
+<FloatingSidebar lang={lang} />
+
+<main class="page-shell mx-auto max-w-[62rem] px-6 py-10 md:px-10 md:py-14" transition:animate={fade({ duration: '0.16s' })}>
+  <article class="resume-page text-justify" data-resume-document data-resume-lang={lang}>
+    <header class="resume-header">
+      <h1>{entry.data.name}</h1>
+
+      <p class="author">
+        {groupedContacts.map((line, lineIndex) => (
+          <Fragment>
+            {lineIndex > 0 && <br />}
+            {line.map((item, index) => (
+              <Fragment>
+                {index > 0 && <span aria-hidden="true"> · </span>}
+                <a href={item.href}>{item.label}</a>
+              </Fragment>
+            ))}
+          </Fragment>
+        ))}
+      </p>
+    </header>
+
+    <div class="abstract resume-abstract">
+      <h2>{t.summary}</h2>
+      <p>{entry.data.description}</p>
+    </div>
+
+    <section class="resume-content">
+      <Content />
+    </section>
+  </article>
+</main>

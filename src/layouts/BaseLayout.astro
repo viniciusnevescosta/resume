@@ -1,0 +1,117 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import '../styles/global.css';
+
+interface SeoContact {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  lang: string;
+  title: string;
+  description: string;
+  pathname: string;
+  name: string;
+  contacts: SeoContact[];
+}
+
+const { lang, title, description, pathname, name, contacts } = Astro.props;
+const canonical = new URL(pathname, Astro.site);
+const siteName = 'Vinícius Neves Costa';
+const ogImage = new URL('/favicon.svg', Astro.site);
+const alternateMap = [
+  { hrefLang: 'pt-BR', href: new URL('/', Astro.site) },
+  { hrefLang: 'en', href: new URL('/en', Astro.site) },
+  { hrefLang: 'x-default', href: new URL('/', Astro.site) },
+];
+const sameAs = contacts
+  .map((item) => item.href)
+  .filter((href) => href.startsWith('https://'));
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${Astro.site}#website`,
+      url: Astro.site,
+      name: siteName,
+      inLanguage: ['pt-BR', 'en'],
+    },
+    {
+      '@type': 'Person',
+      '@id': `${canonical.toString()}#person`,
+      name,
+      description,
+      url: canonical.toString(),
+      sameAs,
+      jobTitle: lang === 'pt-BR' ? 'Desenvolvedor Full Stack' : 'Full-Stack Developer',
+      knowsLanguage: ['pt-BR', 'en', 'es'],
+    },
+    {
+      '@type': 'ProfilePage',
+      '@id': canonical.toString(),
+      url: canonical.toString(),
+      name: title,
+      description,
+      inLanguage: lang,
+      isPartOf: { '@id': `${Astro.site}#website` },
+      mainEntity: { '@id': `${canonical.toString()}#person` },
+    },
+  ],
+};
+const themeBootScript = `(() => {
+  const stored = localStorage.getItem('resume-theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const theme = stored || (prefersDark ? 'dark' : 'light');
+  document.documentElement.dataset.theme = theme;
+  const apply = () => {
+    document.body.classList.toggle('latex-dark', theme === 'dark');
+  };
+  if (document.body) apply();
+  else document.addEventListener('DOMContentLoaded', apply, { once: true });
+})();`;
+---
+
+<!doctype html>
+<html lang={lang} data-theme="light" transition:animate="none">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content={name} />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="format-detection" content="telephone=yes, email=yes, address=no" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="oklch(95.1% 0.009 78.3)" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="oklch(28.1% 0.016 248.4)" />
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="preconnect" href="https://latex.vercel.app" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://latex.vercel.app/style.min.css" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={lang} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={title} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    {alternateMap.map((item) => <link rel="alternate" hreflang={item.hrefLang} href={item.href.toString()} />)}
+    {sameAs.map((href) => <link rel="me" href={href} />)}
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <ClientRouter />
+    <script is:inline>{themeBootScript}</script>
+  </head>
+  <body class="resume-body">
+    <slot />
+  </body>
+</html>
