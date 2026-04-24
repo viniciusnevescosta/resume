@@ -25,7 +25,7 @@ Full-stack developer with around 3 years of experience in web products, automati
 
 ### Web Developer
 
-_MTP Brasil · Jan 2025 - Present_
+_MTP Brasil · Jan 2025 - Feb 2026_
 
 - Worked on the development of a SaaS platform for interacting with customizable AI agents, integrating a Nuxt frontend, Spring Boot backend, Ollama, and PostgreSQL.
 - Contributed to the development of a recruitment SaaS using C#, React, MySQL, and a microservices architecture for resume analysis.
@@ -33,7 +33,7 @@ _MTP Brasil · Jan 2025 - Present_
 
 ### IT Assistant
 
-_MTP Brasil · Mar 2023 - Dec 2024_
+_MTP Brasil · Feb 2023 - Dec 2024_
 
 - Provided technical and operational support for initiatives related to ISO 9001:2015 and ISO 27001:2022 certifications.
 - Participated in the migration of services to AWS EC2 with Docker, contributing to a reduction of approximately BRL 60,000 per year in costs.
