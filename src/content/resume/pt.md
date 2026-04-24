@@ -25,7 +25,7 @@ Desenvolvedor full stack com cerca de 3 anos de experiência em produtos web, au
 
 ### Desenvolvedor Web
 
-_MTP Brasil · Jan 2025 - Atual_
+_MTP Brasil · Jan 2025 - Fev 2026_
 
 - Atuação no desenvolvimento de uma plataforma SaaS para interação com agentes de IA personalizáveis, integrando frontend em Nuxt, backend em Spring Boot, Ollama e PostgreSQL.
 - Participação no desenvolvimento de um SaaS de recrutamento com C#, React, MySQL e arquitetura de microserviços para análise de currículos.
@@ -33,7 +33,7 @@ _MTP Brasil · Jan 2025 - Atual_
 
 ### Assistente de TI
 
-_MTP Brasil · Mar 2023 - Dez 2024_
+_MTP Brasil · Fev 2023 - Dez 2024_
 
 - Suporte técnico e operacional em iniciativas relacionadas às certificações ISO 9001:2015 e ISO 27001:2022.
 - Participação na migração de serviços para AWS EC2 com Docker, contribuindo para uma redução de aproximadamente R$ 60 mil por ano em custos.
