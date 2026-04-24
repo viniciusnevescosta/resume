@@ -2,7 +2,7 @@
 
 My minimalist, responsive curriculum vitae with multi-language support and modern web practices.
 
-![image](https://github.com/user-attachments/assets/e9ab59ec-ffce-46cd-ae48-9e583e553247)
+<!--![image](https://github.com/user-attachments/assets/e9ab59ec-ffce-46cd-ae48-9e583e553247)-->
 
 ## Core Features
 
