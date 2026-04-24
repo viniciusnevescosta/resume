@@ -3,15 +3,15 @@ import { getEntry } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ResumePage from '../components/ResumePage.astro';
 
-const entry = await getEntry('resume', 'pt');
-if (!entry) throw new Error('Portuguese resume entry not found.');
+const entry = await getEntry('resume', 'en');
+if (!entry) throw new Error('English resume entry not found.');
 ---
 
 <BaseLayout
   lang={entry.data.locale}
   title={entry.data.seoTitle}
   description={entry.data.description}
-  pathname="/"
+  pathname="/en"
   name={entry.data.name}
   contacts={entry.data.contacts}
 >
